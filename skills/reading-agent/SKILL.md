@@ -248,7 +248,7 @@ zotero-mcp setup
 - Phase 3: Thematic clustering (uses Findings and Methods)
 - Phase 4: Debate mapping (uses Connections and Analytical Notes)
 
-**With lit-writeup**: Key quotes and contribution claims inform prose drafting.
+**With argument-builder**: Key quotes and contribution claims inform prose drafting.
 
 ---
 

@@ -150,7 +150,7 @@ prompt: |
 
 ---
 
-### lit-writeup
+### argument-builder
 
 #### LW.0: Cluster Assessment
 
@@ -159,7 +159,7 @@ Task: LW.0 Cluster Assessment
 subagent_type: general-purpose
 model: sonnet
 prompt: |
-  Load the lit-writeup skill (read ../lit-writeup/SKILL.md).
+  Load the argument-builder skill (read ../argument-builder/SKILL.md).
   Also read the cluster profiles in clusters/ directory.
   Execute Phase 0: Assessment.
 
@@ -196,7 +196,7 @@ Task: LW.3 Theory Section Drafting
 subagent_type: general-purpose
 model: opus
 prompt: |
-  Load the lit-writeup skill.
+  Load the argument-builder skill.
   Read the phase guides: phases/phase3-drafting.md
   Read techniques: techniques/sentence-toolbox.md, techniques/citation-patterns.md
   Execute Phase 3: Drafting.

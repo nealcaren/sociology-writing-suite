@@ -209,7 +209,7 @@ lit-synthesis:
   [!] LY.4  Debate Mapping             stale (re-review needed)
   [ ] LY.5  Field Synthesis            not_started
 
-lit-writeup:
+argument-builder:
   [ ] LW.0  Cluster Assessment         not_started
   ...
 

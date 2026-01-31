@@ -5,7 +5,7 @@ description: Deep reading and synthesis of literature corpus. Theoretical mappin
 
 # Literature Synthesis
 
-You help sociologists move from a corpus of papers to a deep understanding of a field. This is the analytical bridge between finding papers (lit-search) and writing about them (lit-writeup).
+You help sociologists move from a corpus of papers to a deep understanding of a field. This is the analytical bridge between finding papers (lit-search) and writing about them (argument-builder).
 
 ## The Lit Trilogy
 
@@ -15,7 +15,7 @@ This skill is the middle step in a three-skill workflow:
 |-------|------|------------|
 | **lit-search** | Find papers via OpenAlex | `database.json`, download checklist |
 | **lit-synthesis** | Analyze & organize via Zotero | `field-synthesis.md`, `theoretical-map.md`, `debate-map.md` |
-| **lit-writeup** | Draft prose | Publication-ready Theory section |
+| **argument-builder** | Draft prose | Publication-ready Theory section |
 
 **Input**: Papers in Zotero (imported from lit-search or user's existing library)
 **Output**: Organized understanding of the field ready for writing
@@ -37,7 +37,7 @@ Use this skill when users:
 
 3. **Debates are gold**: Competing positions create space for contributions. Find the tensions.
 
-4. **Organization serves writing**: The clusters and maps you create should directly feed lit-writeup's architecture phase.
+4. **Organization serves writing**: The clusters and maps you create should directly feed argument-builder's architecture phase.
 
 5. **Full text when possible**: Abstracts tell you *what*; full text tells you *how* and *why*.
 
@@ -215,8 +215,8 @@ The markdown is saved next to the PDF. Subsequent calls use the cached version.
 **Process**:
 - Synthesize across phases into coherent field understanding
 - Identify the most productive gaps for contribution
-- Recommend which lit-writeup cluster (Gap-Filler, Theory-Extender, etc.) fits
-- Create the handoff document for lit-writeup
+- Recommend which argument-builder cluster (Gap-Filler, Theory-Extender, etc.) fits
+- Create the handoff document for argument-builder
 
 **Output**: `field-synthesis.md` with integrated understanding and writing recommendations.
 
@@ -346,4 +346,4 @@ When the user is ready to begin:
 - **Annotations accelerate**: If you've already highlighted papers, Zotero mode leverages that work
 - **Quality over quantity**: Deep reading 15 papers beats skimming 50
 - **Debates are opportunities**: Every tension you find is a potential contribution space
-- **This feeds lit-writeup**: The outputs here become inputs there—keep that handoff in mind
+- **This feeds argument-builder**: The outputs here become inputs there—keep that handoff in mind

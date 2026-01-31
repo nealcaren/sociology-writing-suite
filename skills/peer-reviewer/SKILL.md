@@ -160,7 +160,7 @@ The skill adapts its review focus based on what you provide.
 
 **Process**:
 - Work through prioritized items
-- For theory revisions: may invoke lit-writeup patterns
+- For theory revisions: may invoke argument-builder patterns
 - For methods revisions: may invoke methods-writer patterns
 - For findings: work directly with author
 - Track changes made

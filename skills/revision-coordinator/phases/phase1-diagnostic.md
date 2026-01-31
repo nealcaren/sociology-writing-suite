@@ -206,7 +206,7 @@ Add diagnostic findings to `revision-map.md`:
 ### Section: Theory
 - **Cluster**: Gap-Filler (matches intro)
 - **Key issues**: Repetitive with intro, turn is weak
-- **Entry point**: lit-writeup Phase 5 (revision) with focus on turn
+- **Entry point**: argument-builder Phase 5 (revision) with focus on turn
 
 ### Section: Methods
 - **Pathway**: Standard (should be Detailed given vulnerability)
@@ -248,12 +248,12 @@ Based on diagnostics:
 ### "Two Intros" Pattern
 **Symptom**: Introduction and first section of lit review cover similar ground
 **Diagnosis**: Usually a structural issue—no clear division between intro (puzzle + roadmap) and theory (literature engagement)
-**Resolution**: Keep ONE intro; convert the other to proper theory section with lit-writeup guidance
+**Resolution**: Keep ONE intro; convert the other to proper theory section with argument-builder guidance
 
 ### "Weak Turn" Pattern
 **Symptom**: Feedback says gap is unclear or contribution is vague
 **Diagnosis**: Turn exists but is buried, generic, or too brief
-**Resolution**: lit-writeup Phase 4 focus—make turn explicit, position it correctly, sharpen language
+**Resolution**: argument-builder Phase 4 focus—make turn explicit, position it correctly, sharpen language
 
 ### "Methods Credibility Gap" Pattern
 **Symptom**: Feedback asks for more detail on coding, reliability, or process
@@ -284,6 +284,6 @@ Summarize for the orchestrator:
 - Revised sequencing if needed
 
 **Example summary**:
-> Diagnostics complete. Theory section is Gap-Filler cluster, word count high (+200), turn needs strengthening → lit-writeup Phase 5. Methods currently Standard but should be Detailed given vulnerable population → methods-writer Phase 1 for pathway change. Introduction has two-intros problem → interview-bookends Phase 1 after theory settled. No cluster mismatches detected. Revised sequence: Theory → Methods → Intro → Conclusion.
+> Diagnostics complete. Theory section is Gap-Filler cluster, word count high (+200), turn needs strengthening → argument-builder Phase 5. Methods currently Standard but should be Detailed given vulnerable population → methods-writer Phase 1 for pathway change. Introduction has two-intros problem → interview-bookends Phase 1 after theory settled. No cluster mismatches detected. Revised sequence: Theory → Methods → Intro → Conclusion.
 
 Then pause for user confirmation before proceeding to Phase 2.

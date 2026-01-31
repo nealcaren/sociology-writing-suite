@@ -95,19 +95,50 @@ Create `assessment-memo.md` with:
 
 ## Contribution Type Analysis
 - [Walk through decision tree logic]
-- [Note any ambiguities]
+- [Note any ambiguities or tensions]
 
-## Recommended Cluster
-**Cluster [N]: [Name]**
+## Recommendation with Alternatives
 
-### Rationale
-- [Why this cluster fits]
-- [What the cluster predicts about structure]
+### Primary Recommendation: Cluster [N] ([Name])
 
-### Alternative Considered
-- [If applicable: why rejected alternative]
+**Why this fits**: [2-3 sentences explaining the match between project and cluster]
 
-## Cluster Implications
+**What this means**:
+- Structure: [subsection expectations]
+- Literature balance: [theory-heavy/balanced/substantive]
+- Turn placement: [early/middle/late]
+
+---
+
+### Close Alternative: Cluster [N] ([Name])
+
+**Why this might fit**: [1-2 sentences on what makes this a viable option]
+
+**What would make this better**: [specific conditions under which you'd switch]
+
+**Trade-off**: [what you gain vs. lose compared to primary]
+
+---
+
+### Hybrid Possibility: [Name] with [Name] Elements
+
+**How it works**: [describe the blend—e.g., "Lead with framework (Theory-Extender) but give the second literature its own subsection (Synthesis element)"]
+
+**When to use**: [conditions that favor the hybrid]
+
+**Structural implication**: [e.g., "~60/40 balance rather than 80/20"]
+
+---
+
+## What Would Shift My Recommendation
+
+| If this is true... | Then consider... |
+|-------------------|------------------|
+| [condition 1] | [alternative cluster] |
+| [condition 2] | [alternative cluster] |
+| [condition 3] | [hybrid approach] |
+
+## Cluster Implications (Primary)
 - Expected word count: [range]
 - Subsection structure: [description]
 - Literature balance: [theory-heavy/balanced/substantive]
@@ -123,10 +154,15 @@ Create `assessment-memo.md` with:
 
 ### 6. Present Recommendation
 
-Present to user:
-- Your recommended cluster with clear rationale
-- What this means for structure and approach
-- Any questions you have before proceeding
+Present to user with clear structure:
+
+1. **Your primary recommendation** with rationale
+2. **One close alternative** with what would make it preferable
+3. **A hybrid option** if the project sits between clusters
+4. **Decision factors** that would shift your recommendation
+5. **Questions** you have before proceeding
+
+**Important**: Let the user choose—don't assume they'll take the primary. Some users know their project better and may prefer the alternative or hybrid.
 
 ---
 

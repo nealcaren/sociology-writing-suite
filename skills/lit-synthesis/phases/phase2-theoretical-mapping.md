@@ -4,7 +4,7 @@
 
 Papers don't exist in isolation—they belong to intellectual traditions, cite foundational texts, and position themselves within ongoing conversations. Theoretical mapping reveals this structure: who the key thinkers are, how concepts travel across papers, and which traditions are in dialogue or tension.
 
-This map directly feeds lit-writeup's architecture phase by clarifying which literatures need engagement.
+This map directly feeds argument-builder's architecture phase by clarifying which literatures need engagement.
 
 ---
 
@@ -165,7 +165,7 @@ Based on this map:
 - **Most developed tradition**: [which one]
 - **Underdeveloped tradition**: [which one]
 - **Productive synthesis opportunity**: [if any]
-- **Recommended lit-writeup cluster**: [Gap-Filler/Theory-Extender/etc.]
+- **Recommended argument-builder cluster**: [Gap-Filler/Theory-Extender/etc.]
 ```
 
 ---
@@ -185,7 +185,7 @@ The same term may mean different things to different authors. Document variation
 A paper citing Bourdieu may be critiquing Bourdieu. Note the stance, not just the citation.
 
 ### This Feeds Architecture
-The traditions you identify become the subsections and literatures in lit-writeup. Build the map with writing in mind.
+The traditions you identify become the subsections and literatures in argument-builder. Build the map with writing in mind.
 
 ---
 
@@ -202,7 +202,7 @@ Report to the orchestrator:
 - Key foundational texts
 - Any cross-traditional connections
 - Concepts that need careful definition
-- Preliminary cluster recommendation for lit-writeup
+- Preliminary cluster recommendation for argument-builder
 
 Example summary:
-> "Theoretical mapping complete. **Three traditions** identified: legal consciousness (anchored by Ewick & Silbey 1998), neighborhood effects (anchored by Sampson et al. 1997), and recognition theory (anchored by Honneth 2003). Cross-traditional connection noted: 3 papers bridge legal consciousness and recognition. Key concept variation: 'cynicism' means different things across papers. Recommend **Synthesis Integrator** cluster for lit-writeup given opportunity to bridge traditions. Ready for Phase 3."
+> "Theoretical mapping complete. **Three traditions** identified: legal consciousness (anchored by Ewick & Silbey 1998), neighborhood effects (anchored by Sampson et al. 1997), and recognition theory (anchored by Honneth 2003). Cross-traditional connection noted: 3 papers bridge legal consciousness and recognition. Key concept variation: 'cynicism' means different things across papers. Recommend **Synthesis Integrator** cluster for argument-builder given opportunity to bridge traditions. Ready for Phase 3."

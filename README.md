@@ -75,7 +75,7 @@ Restart Claude Code and type `/help`. You should see these skills listed:
 - `/interview-writeup`
 - `/lit-search`
 - `/lit-synthesis`
-- `/lit-writeup`
+- `/argument-builder`
 - `/methods-writer`
 - `/peer-reviewer`
 - `/revision-coordinator`
@@ -100,7 +100,7 @@ The coordinator guides you through literature search, synthesis, data analysis, 
 Or invoke any skill directly:
 
 ```
-/lit-writeup
+/argument-builder
 ```
 
 Claude loads the skill and guides you through its workflow.
@@ -126,7 +126,7 @@ Use in sequence to go from search to written Theory section:
 |-------|--------------|
 | `/lit-search` | Build literature database using OpenAlex API |
 | `/lit-synthesis` | Deep reading, theoretical mapping, debate identification |
-| `/lit-writeup` | Draft publication-ready Theory section |
+| `/argument-builder` | Draft publication-ready Theory section |
 
 ### Interview Research Chain
 
@@ -167,7 +167,7 @@ Go from raw interviews to written manuscript sections:
 1. `/interview-analyst` — Analyze interviews
 2. `/methods-writer` — Write methods
 3. `/interview-writeup` — Write findings
-4. `/lit-search` → `/lit-synthesis` → `/lit-writeup` — Build literature review
+4. `/lit-search` → `/lit-synthesis` → `/argument-builder` — Build literature review
 5. `/interview-bookends` — Write intro and conclusion
 6. `/peer-reviewer` — Pre-submission review
 7. `/bibliography-builder` — Finalize references
@@ -185,7 +185,7 @@ Go from raw interviews to written manuscript sections:
 
 Several skills use empirically-derived styles based on analysis of 80 articles from *Social Problems* and *Social Forces*:
 
-- **lit-writeup**: Gap-Filler, Theory-Extender, Concept-Builder, Synthesis, Problem-Driven
+- **argument-builder**: Gap-Filler, Theory-Extender, Concept-Builder, Synthesis, Problem-Driven
 - **interview-bookends**: Same 5 clusters for intros/conclusions
 - **case-justification**: Minimal, Standard, Deep Historical, Comparative, Policy-Driven
 - **methods-writer**: Efficient (600-900w), Standard (900-1200w), Detailed (1200-1800w)
@@ -213,7 +213,7 @@ sociology-writing-suite/
     ├── interview-writeup/
     ├── lit-search/
     ├── lit-synthesis/
-    ├── lit-writeup/
+    ├── argument-builder/
     ├── methods-writer/
     ├── peer-reviewer/
     ├── research-coordinator/

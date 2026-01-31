@@ -64,7 +64,7 @@ Review available model skills and select the most appropriate:
 
 | Skill | Best For | Key Features |
 |-------|----------|--------------|
-| `lit-writeup` | Theory/Lit Review sections | 5 clusters, paragraph functions, citation patterns |
+| `argument-builder` | Theory/Lit Review sections | 5 clusters, paragraph functions, citation patterns |
 | `interview-bookends` | Intro/Conclusion pairs | Coherence checking, callbacks, opening moves |
 | `interview-writeup` | Methods/Findings | Quote integration, anchor/echo patterns |
 
@@ -75,7 +75,7 @@ For each candidate, identify what to extract:
 - Technique guides (what writing tools to include)
 
 **Selection criteria**:
-- Match section type if possible (lit-writeup for theory sections)
+- Match section type if possible (argument-builder for theory sections)
 - Match rhetorical function (interview-bookends for framing sections)
 - Consider complexity (simpler model for first skill)
 

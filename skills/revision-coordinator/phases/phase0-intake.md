@@ -87,11 +87,11 @@ For each section with feedback items, identify the primary skill:
 |---------|---------------|-----------------|
 | Introduction | `interview-bookends` | Direct revision if minimal |
 | Conclusion | `interview-bookends` | Direct revision if minimal |
-| Theory/Literature | `lit-writeup` | Direct revision if < 3 items |
+| Theory/Literature | `argument-builder` | Direct revision if < 3 items |
 | Methods | `methods-writer` | Direct revision if < 3 items |
 | Case Justification | `case-justification` | Direct revision if < 3 items |
 | Findings | No dedicated skill | Direct revision with guidance |
-| Discussion | `lit-writeup` techniques | Direct revision with guidance |
+| Discussion | `argument-builder` techniques | Direct revision with guidance |
 
 **Routing threshold**: If a section has 3+ substantive/structural items, route to the specialized skill. If it has only 1-2 stylistic items, may handle directly.
 
@@ -124,7 +124,7 @@ Create `revision-map.md` with this structure:
 | Section | Present | ~Words | Skill | Items |
 |---------|---------|--------|-------|-------|
 | Introduction | Yes | 800 | interview-bookends | 2 |
-| Theory | Yes | 1500 | lit-writeup | 3 |
+| Theory | Yes | 1500 | argument-builder | 3 |
 | Methods | Yes | 900 | methods-writer | 2 |
 | Findings | Yes | 4000 | Direct | 1 |
 | Discussion | Yes | 1200 | Direct | 2 |
@@ -140,7 +140,7 @@ Create `revision-map.md` with this structure:
 | I-1 | Stylistic | R1 | Too long | [ ] |
 | I-2 | Structural | R1 | Two intros detected | [ ] |
 
-### Theory (3 items) → lit-writeup
+### Theory (3 items) → argument-builder
 | ID | Type | Source | Item | Status |
 |----|------|--------|------|--------|
 | T-1 | Structural | R1 | Compress by 30% | [ ] |
@@ -200,6 +200,6 @@ Summarize for the orchestrator:
 - Questions requiring user input
 
 **Example summary**:
-> Parsed 11 feedback items across 6 sections. Routing: Introduction/Conclusion → interview-bookends (3 items), Theory → lit-writeup (3 items), Methods → methods-writer (2 items), Findings/Discussion → direct (3 items). Proposed sequence: Theory → Intro → Methods → Findings → Discussion → Conclusion. One question for user: R1 says expand methods, R2 says paper is too long—how to reconcile?
+> Parsed 11 feedback items across 6 sections. Routing: Introduction/Conclusion → interview-bookends (3 items), Theory → argument-builder (3 items), Methods → methods-writer (2 items), Findings/Discussion → direct (3 items). Proposed sequence: Theory → Intro → Methods → Findings → Discussion → Conclusion. One question for user: R1 says expand methods, R2 says paper is too long—how to reconcile?
 
 Then pause for user confirmation before proceeding to Phase 1.

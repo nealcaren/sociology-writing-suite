@@ -4,7 +4,7 @@
 
 While theoretical mapping shows intellectual traditions, thematic clustering organizes papers by what they *study* and *how*. This reveals the empirical landscape: which populations have been studied, which settings, which methods dominate, and where there are gaps.
 
-This clustering directly informs lit-writeup's synthesis paragraphs and helps identify empirical gaps for contribution.
+This clustering directly informs argument-builder's synthesis paragraphs and helps identify empirical gaps for contribution.
 
 ---
 
@@ -203,7 +203,7 @@ Sometimes what's NOT in a cluster is more interesting than what's there.
 Papers that bridge categories often provide models for your own integrative work.
 
 ### Clusters Become Synthesis Paragraphs
-In lit-writeup, each cluster could become a paragraph or subsection. Think about writing as you cluster.
+In argument-builder, each cluster could become a paragraph or subsection. Think about writing as you cluster.
 
 ### Multiple Clustering Schemes Are OK
 The same paper legitimately belongs in multiple clusters. That's information, not a problem.
@@ -225,4 +225,4 @@ Report to the orchestrator:
 - Strategic gaps identified
 
 Example summary:
-> "Thematic clustering complete. **By population**: 4 clusters (working-class mothers, immigrants, youth, homeowners). **By setting**: 3 clusters (neighborhoods, courtrooms, schools). Notable gap: no papers study *renters specifically* despite housing focus. Cross-cluster paper: Desmond 2016 bridges neighborhoods + housing instability. Recommend highlighting renter gap in lit-writeup turn. Ready for Phase 4."
+> "Thematic clustering complete. **By population**: 4 clusters (working-class mothers, immigrants, youth, homeowners). **By setting**: 3 clusters (neighborhoods, courtrooms, schools). Notable gap: no papers study *renters specifically* despite housing focus. Cross-cluster paper: Desmond 2016 bridges neighborhoods + housing instability. Recommend highlighting renter gap in argument-builder turn. Ready for Phase 4."

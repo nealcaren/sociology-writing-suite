@@ -95,7 +95,7 @@ short_title: cultural-frames
 - Key quotes (with page numbers)
 - Your analytical notes
 
-**Why identifiers matter**: The frontmatter identifiers let you reliably match notes back to source papers across the workflow—from lit-search database through lit-synthesis to lit-writeup citations.
+**Why identifiers matter**: The frontmatter identifiers let you reliably match notes back to source papers across the workflow—from lit-search database through lit-synthesis to argument-builder citations.
 
 ### 4. Flag Connections
 
@@ -323,7 +323,7 @@ Flag papers that need deeper (Opus) reading based on:
 Don't just skim. For priority papers, read introduction, theory, methods, findings, AND conclusion. The conclusion often reveals assumptions.
 
 ### Theory Sections Are Gold
-Pay special attention to how authors construct their Theory sections—this feeds directly into lit-writeup.
+Pay special attention to how authors construct their Theory sections—this feeds directly into argument-builder.
 
 ### Note How, Not Just What
 Anyone can summarize findings. Note *how* the argument is constructed, *how* theory is deployed, *how* evidence is marshaled.

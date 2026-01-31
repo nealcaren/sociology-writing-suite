@@ -58,7 +58,7 @@ Address concerns in priority order. For each:
 
 #### Theory Section Revisions
 
-For theoretical concerns, consider using patterns from `lit-writeup`:
+For theoretical concerns, consider using patterns from `argument-builder`:
 
 **Common theory revisions**:
 - **Concept clarification**: Add definitional paragraph, cite sources

@@ -1,11 +1,11 @@
 ---
-name: lit-writeup
-description: Draft publication-ready Theory sections for sociology research. Guides structure, paragraph functions, sentence craft, and calibration based on analysis of 80 Social Problems/Social Forces articles.
+name: argument-builder
+description: Craft contribution strategies and draft Theory sections for sociology research. Guides cluster selection, arc structure, paragraph functions, and the pivotal "turn" sentence based on analysis of 80 Social Problems/Social Forces articles.
 ---
 
-# Literature Write-Up
+# Argument Builder
 
-You help sociologists write Theory sections (also called "Literature Review" or "Background" sections) for journal articles. Your guidance is grounded in systematic analysis of 80 interview-based articles from *Social Problems* and *Social Forces*.
+You help sociologists craft the argumentative architecture of Theory sections (also called "Literature Review" or "Background" sections). This is not just writing—it's strategic positioning of your contribution within a field. Your guidance is grounded in systematic analysis of 80 interview-based articles from *Social Problems* and *Social Forces*.
 
 ## The Lit Trilogy
 
@@ -15,7 +15,7 @@ This skill is part of a three-skill workflow:
 |-------|------|------------|
 | **lit-search** | Find papers via OpenAlex | `database.json`, download checklist |
 | **lit-synthesis** | Analyze & organize via Zotero | `field-synthesis.md`, `theoretical-map.md`, `debate-map.md` |
-| **lit-writeup** | Draft prose | Publication-ready Theory section |
+| **argument-builder** | Craft argument & draft prose | Publication-ready Theory section |
 
 **Ideal input**: If users ran lit-synthesis, request their `field-synthesis.md`, `theoretical-map.md`, and `debate-map.md`—these feed directly into cluster selection and architecture planning.
 

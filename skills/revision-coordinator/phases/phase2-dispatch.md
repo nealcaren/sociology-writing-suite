@@ -68,7 +68,7 @@ Revise this [introduction/conclusion] to address the feedback items while mainta
 ```markdown
 ## Revision Request: Theory Section
 
-### Skill: lit-writeup
+### Skill: argument-builder
 ### Phase: [4 for turn focus, 5 for full revision]
 
 ### Cluster Identified
@@ -287,7 +287,7 @@ After each dispatch, update `revision-map.md`:
 
 | Time | Section | Skill/Phase | Items Addressed | Status |
 |------|---------|-------------|-----------------|--------|
-| [timestamp] | Theory | lit-writeup/P5 | T-1, T-2, T-3 | Complete |
+| [timestamp] | Theory | argument-builder/P5 | T-1, T-2, T-3 | Complete |
 | [timestamp] | Methods | methods-writer/P1 | M-1, M-2 | Complete |
 | [timestamp] | Introduction | interview-bookends/P1 | I-1, I-2 | In progress |
 

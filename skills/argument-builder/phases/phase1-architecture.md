@@ -12,7 +12,7 @@ Poor architecture leads to sections that feel disorganized, where the turn arriv
 
 ### 1. Select Arc Structure
 
-Choose the arc that matches your cluster:
+Choose the arc that matches your cluster, but present alternatives:
 
 | Arc | Description | Best For |
 |-----|-------------|----------|
@@ -21,6 +21,44 @@ Choose the arc that matches your cluster:
 | **Dialogue** | Position A ↔ Position B → Resolution | Problem-Driven (Debate), Synthesis |
 | **Problem-Response** | Puzzle → Attempts → Limitations → Your approach | Problem-Driven, Concept-Builder |
 | **Narrative-Historical** | Chronological development → Current moment | Problem-Driven (Historical) |
+
+#### Arc Recommendation Format
+
+Present arc selection with alternatives:
+
+```markdown
+## Arc Recommendation
+
+### Primary: [Arc Name]
+
+**Why this fits**: [2-3 sentences on match with cluster and project]
+
+**How it works**: [Brief description of the arc's movement]
+
+**Example flow**: [1-sentence description of how their specific content moves through this arc]
+
+---
+
+### Close Alternative: [Arc Name]
+
+**Why this might work**: [1-2 sentences]
+
+**What you'd gain**: [specific benefit]
+
+**What you'd lose**: [specific trade-off]
+
+**When to prefer this**: [condition]
+
+---
+
+### Hybrid Possibility: [Arc] with [Arc] Elements
+
+**How it works**: [e.g., "Funnel opening that transitions to Dialogue structure in the middle"]
+
+**When this helps**: [specific project characteristics]
+
+**Structural implication**: [how it changes the outline]
+```
 
 ### 2. Plan Subsection Structure
 

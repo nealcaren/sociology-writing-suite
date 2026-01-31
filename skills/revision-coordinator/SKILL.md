@@ -24,7 +24,7 @@ This is an **orchestration skill**—it coordinates other skills rather than doi
 Use this skill when you have:
 - A **completed draft** (or substantial sections) of a manuscript
 - **Feedback** from reviewers, editors, colleagues, or self-assessment
-- Sections that were written (or could have been written) using skills like `lit-writeup`, `methods-writer`, `interview-bookends`, or `case-justification`
+- Sections that were written (or could have been written) using skills like `argument-builder`, `methods-writer`, `interview-bookends`, or `case-justification`
 
 ## Skill Routing Table
 
@@ -32,11 +32,11 @@ Use this skill when you have:
 |---------|---------------|--------------------------|
 | **Introduction** | `interview-bookends` | Phase 1 (intro drafting) or Phase 3 (coherence) |
 | **Conclusion** | `interview-bookends` | Phase 2 (conclusion drafting) or Phase 3 (coherence) |
-| **Theory/Literature Review** | `lit-writeup` | Phase 4 (turn) or Phase 5 (revision) |
+| **Theory/Literature Review** | `argument-builder` | Phase 4 (turn) or Phase 5 (revision) |
 | **Methods** | `methods-writer` | Phase 2 (revision) |
 | **Case Justification** | `case-justification` | Phase 2 (revision) |
 | **Findings** | General guidance | Direct revision with coordinator |
-| **Discussion** | `lit-writeup` techniques | Direct revision with coordinator |
+| **Discussion** | `argument-builder` techniques | Direct revision with coordinator |
 | **Pre-Empirical Validation** | `peer-reviewer` | Before data deep dive |
 | **Final Peer Review** | `peer-reviewer` | After manuscript completion |
 
@@ -168,7 +168,7 @@ When invoking a sub-skill for revision, provide:
 1. **The existing section text** (what needs revision)
 2. **The specific feedback items** (what needs to change)
 3. **The identified cluster/pathway** (from diagnostic)
-4. **The contextual sections** (intro-bookends needs Theory+Findings; lit-writeup needs RQ+argument)
+4. **The contextual sections** (intro-bookends needs Theory+Findings; argument-builder needs RQ+argument)
 5. **Clear instruction**: "Revise this section in [Cluster X] style to address: [specific feedback]"
 
 **Tracking**: Mark each feedback item as:
@@ -377,7 +377,7 @@ Task: Revise Theory Section
 subagent_type: general-purpose
 model: opus
 prompt: |
-  Load the lit-writeup skill (read ../lit-writeup/SKILL.md and ../lit-writeup/phases/phase5-revision.md).
+  Load the argument-builder skill (read ../argument-builder/SKILL.md and ../argument-builder/phases/phase5-revision.md).
 
   You are revising an existing Theory section, not writing fresh.
 
@@ -410,7 +410,7 @@ No dedicated skill exists. For Findings revision:
 
 ### Discussion Sections
 
-Partial coverage via lit-writeup techniques. For Discussion revision:
+Partial coverage via argument-builder techniques. For Discussion revision:
 - Check four standard elements: summary, implications, limitations, future directions
 - Verify scope conditions are explicit
 - Ensure limitations are honest but not self-undermining
@@ -423,7 +423,7 @@ Partial coverage via lit-writeup techniques. For Discussion revision:
 **Diagnosis**: Often happens when there's a general intro + a section called "Background" or "Literature Review" that re-introduces the topic.
 **Resolution**:
 1. Keep ONE intro (usually the first)
-2. Convert the second into a proper Theory section (use lit-writeup cluster guidance)
+2. Convert the second into a proper Theory section (use argument-builder cluster guidance)
 3. Run interview-bookends Phase 3 for coherence check
 
 ### Scenario: Methods Credibility Gap
@@ -438,7 +438,7 @@ Partial coverage via lit-writeup techniques. For Discussion revision:
 **Feedback**: "Gap isn't clear" or "Contribution feels vague"
 **Diagnosis**: Turn (gap → contribution pivot) isn't sharp enough.
 **Resolution**:
-1. Use lit-writeup Phase 4 (Turn) specifically
+1. Use argument-builder Phase 4 (Turn) specifically
 2. Ensure turn appears at subsection transition, not buried
 3. Check that "what we don't know" is specific, not generic
 

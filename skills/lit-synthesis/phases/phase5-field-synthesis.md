@@ -4,7 +4,7 @@
 
 This is where everything comes together. You've audited the corpus, read deeply, mapped theories, clustered themes, and identified debates. Now you synthesize this into a coherent understanding of the field that's ready for writing.
 
-The outputs of this phase are the direct inputs to lit-writeup. This is the handoff.
+The outputs of this phase are the direct inputs to argument-builder. This is the handoff.
 
 ---
 
@@ -70,7 +70,7 @@ For each opportunity:
 
 ### 4. Recommend Lit-Writeup Cluster
 
-Based on the synthesis, recommend a cluster for lit-writeup:
+Based on the synthesis, recommend a cluster for argument-builder:
 
 | If... | Then Consider... |
 |-------|------------------|
@@ -101,7 +101,7 @@ Provide rationale:
 
 ### 5. Plan the Handoff
 
-Specify what lit-writeup will need:
+Specify what argument-builder will need:
 
 ```markdown
 ## Handoff to Lit-Writeup
@@ -182,7 +182,7 @@ Create `field-synthesis.md`:
 
 ## Ready for Lit-Writeup
 
-User can now invoke `/lit-writeup` with this synthesis as input.
+User can now invoke `/argument-builder` with this synthesis as input.
 
 Recommended prompt:
 > "I've completed lit-synthesis. My field-synthesis.md recommends [Cluster] because [reason]. My main argument is [X]. Please begin Phase 0: Assessment."
@@ -220,8 +220,8 @@ Your recommendations are informed suggestions. The user knows their project best
 Report to the orchestrator:
 - Summary of field state (2-3 sentences)
 - Primary contribution opportunity identified
-- Recommended lit-writeup cluster
+- Recommended argument-builder cluster
 - Readiness for handoff
 
 Example summary:
-> "Field synthesis complete. The literature on police-calling in disadvantaged neighborhoods is theoretically mature (legal consciousness, recognition) but empirically narrow (focused on residents' perspectives, not meaning-making processes). Primary opportunity: **synthesis** of legal consciousness and recognition traditions to explain the cynicism-reliance paradox. Recommended cluster: **Synthesis Integrator**. Handoff document ready with suggested turn: 'Yet while research documents why residents call police despite cynicism, there is less attention to the cultural scripts through which residents make sense of these encounters.' Ready for lit-writeup."
+> "Field synthesis complete. The literature on police-calling in disadvantaged neighborhoods is theoretically mature (legal consciousness, recognition) but empirically narrow (focused on residents' perspectives, not meaning-making processes). Primary opportunity: **synthesis** of legal consciousness and recognition traditions to explain the cynicism-reliance paradox. Recommended cluster: **Synthesis Integrator**. Handoff document ready with suggested turn: 'Yet while research documents why residents call police despite cynicism, there is less attention to the cultural scripts through which residents make sense of these encounters.' Ready for argument-builder."

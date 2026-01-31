@@ -130,7 +130,7 @@ Create 3-4 phase files based on section type:
 - Phase 1: Drafting (write the section)
 - Phase 2: Coherence Check (verify alignment)
 
-**For Theory/Methods skills** (like lit-writeup):
+**For Theory/Methods skills** (like argument-builder):
 - Phase 0: Assessment (identify cluster, contribution type)
 - Phase 1: Architecture (plan structure)
 - Phase 2: Drafting (write paragraphs)

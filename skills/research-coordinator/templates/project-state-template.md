@@ -52,7 +52,7 @@ research:
       version: "Post-analysis v1"
       argument: "Revised after initial coding revealed X"
 
-  # Contribution type (from lit-writeup clusters)
+  # Contribution type (from argument-builder clusters)
   contribution_type: null  # gap-filler | theory-extender | concept-builder | synthesis | problem-driven
 
 # -----------------------------------------------------------------------------
@@ -226,11 +226,11 @@ phases:
     notes: null
 
   # ---------------------------------------------------------------------------
-  # lit-writeup: Draft theory/literature section
+  # argument-builder: Draft theory/literature section
   # ---------------------------------------------------------------------------
   LW.0:
     name: "Cluster Assessment"
-    skill: "lit-writeup"
+    skill: "argument-builder"
     status: not_started
     started: null
     completed: null
@@ -241,7 +241,7 @@ phases:
 
   LW.1:
     name: "Architecture"
-    skill: "lit-writeup"
+    skill: "argument-builder"
     status: not_started
     started: null
     completed: null
@@ -253,7 +253,7 @@ phases:
 
   LW.2:
     name: "Paragraph Planning"
-    skill: "lit-writeup"
+    skill: "argument-builder"
     status: not_started
     started: null
     completed: null
@@ -262,7 +262,7 @@ phases:
 
   LW.3:
     name: "Drafting"
-    skill: "lit-writeup"
+    skill: "argument-builder"
     status: not_started
     started: null
     completed: null
@@ -274,7 +274,7 @@ phases:
 
   LW.4:
     name: "Turn Crafting"
-    skill: "lit-writeup"
+    skill: "argument-builder"
     status: not_started
     started: null
     completed: null
@@ -285,7 +285,7 @@ phases:
 
   LW.5:
     name: "Revision"
-    skill: "lit-writeup"
+    skill: "argument-builder"
     status: not_started
     started: null
     completed: null

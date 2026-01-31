@@ -4,7 +4,7 @@
 
 Debates are opportunities. Where scholars disagree—about mechanisms, explanations, definitions, or evidence—there's space for contribution. This phase identifies the tensions, contradictions, and unresolved questions in your field.
 
-For lit-writeup, debates may suggest a Problem-Driven (Debate-Resolver) cluster, or they may reveal productive tensions to address even in other cluster types.
+For argument-builder, debates may suggest a Problem-Driven (Debate-Resolver) cluster, or they may reveal productive tensions to address even in other cluster types.
 
 ---
 
