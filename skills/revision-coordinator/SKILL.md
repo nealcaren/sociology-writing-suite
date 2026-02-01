@@ -30,6 +30,7 @@ Use this skill when you have:
 
 | Section | Primary Skill | Entry Point for Revision |
 |---------|---------------|--------------------------|
+| **Abstract** | `abstract-builder` | Phase 0 (archetype) or Phase 3 (revision) |
 | **Introduction** | `interview-bookends` | Phase 1 (intro drafting) or Phase 3 (coherence) |
 | **Conclusion** | `interview-bookends` | Phase 2 (conclusion drafting) or Phase 3 (coherence) |
 | **Theory/Literature Review** | `argument-builder` | Phase 4 (turn) or Phase 5 (revision) |

@@ -66,6 +66,7 @@ Add to your Claude Code settings (`~/.claude/settings.json` or project `.claude/
 
 Restart Claude Code and type `/help`. You should see these skills listed:
 
+- `/abstract-builder`
 - `/research-coordinator`
 - `/bibliography-builder`
 - `/case-justification`
@@ -142,6 +143,7 @@ Go from raw interviews to written manuscript sections:
 
 | Skill | What It Does |
 |-------|--------------|
+| `/abstract-builder` | Write publication-ready abstracts (4 archetype options) |
 | `/methods-writer` | Write Methods sections (3 pathway options) |
 | `/case-justification` | Write case selection rationale |
 
@@ -205,6 +207,7 @@ sociology-writing-suite/
 ├── plugin.json
 ├── README.md
 └── skills/
+    ├── abstract-builder/
     ├── bibliography-builder/
     ├── case-justification/
     ├── genre-skill-builder/
