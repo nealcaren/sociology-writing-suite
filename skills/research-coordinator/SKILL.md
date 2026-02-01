@@ -32,7 +32,7 @@ This is a **meta-orchestration skill** that **drives the research process**:
 
 1. **You drive, they navigate**: You proactively move the project forward, suggesting and executing next steps. The user provides direction at key decision points, but you don't wait passively for commands.
 2. **Maintains project state** in `project-state.md`—tracking what's done, what's pending, and what depends on what
-3. **Routes to specialized skills** (lit-search, lit-synthesis, argument-builder, interview-analyst, interview-writeup, methods-writer, case-justification, interview-bookends, revision-coordinator, writing-editor)
+3. **Routes to specialized skills** (lit-search, lit-synthesis, argument-builder, interview-analyst, interview-writeup, methods-writer, case-justification, interview-bookends, verifier, revision-coordinator, writing-editor)
 4. **Supports non-linear navigation**—you can jump to any phase, return to earlier work, or iterate between domains
 5. **Tracks dependencies**—warns when changes might invalidate downstream work
 6. **Manages the research argument**—as it evolves through literature engagement and data analysis
@@ -215,13 +215,20 @@ When a user comes to you with a research question like "How do journalists cover
 │     • Check cross-references and terminology                             │
 │     └── NO PAUSE: Mechanical assembly                                    │
 │                                                                          │
-│ 16. REVISION (when feedback arrives)                                     │
+│ 16. VERIFY QUOTES & CLAIMS (VF.0-VF.4)                                   │
+│     • Extract all quotes and source-attributed claims                    │
+│     • Map to source documents (transcripts, literature)                  │
+│     • Verify each using grep search, haiku agent for deep read           │
+│     • Generate verification report with issues flagged                   │
+│     └── DECISION POINT: Review NOT FOUND items, fix before submission   │
+│                                                                          │
+│ 17. REVISION (when feedback arrives)                                     │
 │     • Parse feedback, map to sections                                    │
 │     • Route to appropriate skills                                        │
 │     • Verify coherence after changes                                     │
 │     └── DECISION POINTS: Throughout, as substantive choices arise       │
 │                                                                          │
-│ 17. PROSE POLISH (before submission)                                     │
+│ 18. PROSE POLISH (before submission)                                     │
 │     • Run writing-editor on complete manuscript                          │
 │     • Top-down workflow: Document → Paragraph → Sentence → Word         │
 │     • Fixes passive voice, abstract nouns, throat-clearing              │
@@ -297,6 +304,11 @@ This is why the workflow isn't strictly linear. You don't fully finish literatur
 
 | Skill | Phase | Sub-Phase | Description |
 |-------|-------|-----------|-------------|
+| **verifier** | VF | VF.0 | Intake & Source Inventory |
+| | | VF.1 | Quote/Claim Extraction |
+| | | VF.2 | Source Mapping |
+| | | VF.3 | Verification (grep + haiku) |
+| | | VF.4 | Report Generation |
 | **revision-coordinator** | RC | RC.0 | Intake & Feedback Mapping |
 | | | RC.1 | Diagnostic Assessment |
 | | | RC.2 | Skill Dispatch |
@@ -416,10 +428,11 @@ Writing Domain │                  IW.0 → IW.1 → IW.2 → IW.3            �
 | Theoretical map (LY.2) | LW.0-5 (Theory section), IA.0 (if Track A), IB.0-3 |
 | Debate map (LY.4) | LW.3-5 (Theory drafting) |
 | Coding structure (IA.2) | IA.3-5, IW.2 (Findings) |
-| Quote database (IA.5) | IW.2 (Findings) |
+| Quote database (IA.5) | IW.2 (Findings), VF.0-4 (Verification) |
 | Main argument | IB.1 (Intro), IB.2 (Conclusion), LW.4 (Turn) |
-| Theory section (LW.3) | IB.0-3 (Bookends) |
-| Findings section (IW.2) | IB.0-3 (Bookends) |
+| Theory section (LW.3) | IB.0-3 (Bookends), VF.0-4 (if literature claims) |
+| Findings section (IW.2) | IB.0-3 (Bookends), VF.0-4 (if interview quotes) |
+| Interview transcripts | VF.3 (Verification) |
 
 ## Entry Points
 
@@ -606,6 +619,11 @@ project/
 │   │   ├── conclusion.md
 │   │   └── coherence-memo.md
 │   └── manuscript.md             # Assembled full manuscript
+├── verification/                 # VF outputs
+│   ├── scope-summary.md          # VF.0 output
+│   ├── verification-items.md     # VF.1-VF.2 output
+│   ├── verification-results.md   # VF.3 output
+│   └── verification-report.md    # VF.4 output
 ├── revision/                     # RC outputs
 │   ├── feedback.md
 │   ├── revision-map.md

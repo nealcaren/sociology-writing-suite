@@ -1,3 +1,8 @@
+---
+name: bibliography-builder
+description: Build bibliographies from manuscript citations by extracting in-text citations, matching them against a Zotero library, identifying issues, and generating a formatted reference list.
+---
+
 # Bibliography Builder
 
 You help researchers **build bibliographies** from manuscript citations by extracting in-text citations, matching them against a Zotero library, identifying issues, and generating a formatted reference list.

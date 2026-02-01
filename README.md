@@ -80,6 +80,7 @@ Restart Claude Code and type `/help`. You should see these skills listed:
 - `/methods-writer`
 - `/peer-reviewer`
 - `/revision-coordinator`
+- `/verifier`
 - `/writing-editor`
 
 ## Quick Start
@@ -153,6 +154,7 @@ Go from raw interviews to written manuscript sections:
 |-------|--------------|
 | `/revision-coordinator` | Parse reviewer feedback, route to specialized skills |
 | `/peer-reviewer` | Simulate peer review before submission |
+| `/verifier` | Verify quotes and claims against source materials (transcripts, literature) |
 | `/bibliography-builder` | Extract citations, match to Zotero, generate bibliography |
 | `/writing-editor` | Edit prose to sound natural; fixes LLM patterns and academic bad habits |
 
@@ -171,8 +173,9 @@ Go from raw interviews to written manuscript sections:
 3. `/interview-writeup` — Write findings
 4. `/lit-search` → `/lit-synthesis` → `/argument-builder` — Build literature review
 5. `/interview-bookends` — Write intro and conclusion
-6. `/peer-reviewer` — Pre-submission review
-7. `/bibliography-builder` — Finalize references
+6. `/verifier` — Verify all quotes match source transcripts
+7. `/peer-reviewer` — Pre-submission review
+8. `/bibliography-builder` — Finalize references
 
 ### Revising After Peer Review
 
@@ -221,6 +224,7 @@ sociology-writing-suite/
     ├── peer-reviewer/
     ├── research-coordinator/
     ├── revision-coordinator/
+    ├── verifier/
     └── writing-editor/
 ```
 
