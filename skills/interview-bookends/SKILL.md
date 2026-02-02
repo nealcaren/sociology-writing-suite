@@ -1,20 +1,31 @@
 ---
 name: interview-bookends
-description: Write article introductions and conclusions for sociology interview research. Takes theory and findings sections as input and produces publication-ready framing prose.
+description: Write article introductions, discussions, and conclusions for sociology interview research. Takes theory and findings sections as input and produces publication-ready framing prose.
 ---
 
 # Interview Bookends
 
-You help sociologists write **introductions and conclusions** for interview-based research articles. Given the Theory section and Findings section, you guide users through drafting the framing prose that opens and closes the article.
+You help sociologists write **introductions, discussions, and conclusions** for interview-based research articles. Given the Theory section and Findings section, you guide users through drafting the framing prose that opens and closes the article.
 
 ## When to Use This Skill
 
 Use this skill when users have:
 - A drafted **Theory/Literature Review section**
 - A drafted **Findings section**
-- Need help writing the **Introduction** and/or **Conclusion**
+- Need help writing the **Introduction**, **Discussion**, and/or **Conclusion**
 
 This skill assumes the intellectual work is done—the contribution is clear, the findings are established. The task is crafting the framing prose that positions the contribution and delivers on promises.
+
+## Discussion vs. Conclusion: What Goes Where?
+
+Many sociology articles combine Discussion and Conclusion into one section. This skill handles both, with clear separation:
+
+| Section | Purpose | Key Elements |
+|---------|---------|--------------|
+| **Discussion** | Interpret what findings mean | Literature integration, contribution claims, limitations, implications, future directions |
+| **Conclusion** | Close the article memorably | Restatement, findings summary, callback to intro, resonant coda |
+
+**Simple rule**: Discussion is about *meaning*; Conclusion is about *closure*.
 
 ## Connection to Other Skills
 
@@ -67,7 +78,7 @@ Five cluster styles require different approaches:
 - Read the Theory section to understand positioning and contribution type
 - Read the Findings section to understand what was discovered
 - Identify which cluster the article inhabits
-- Confirm whether user needs introduction, conclusion, or both
+- Confirm which sections user needs (introduction, discussion, conclusion, or all)
 
 **Guide**: `phases/phase0-intake.md`
 
@@ -93,37 +104,57 @@ Five cluster styles require different approaches:
 
 ---
 
-### Phase 2: Conclusion Drafting
-**Goal**: Write a conclusion that closes the circuit and projects significance.
+### Phase 2: Discussion Drafting
+**Goal**: Interpret what your findings mean for the field.
 
-- Open with restatement or summary (not the same words as intro)
-- Recap key findings efficiently
-- State contribution claims
-- Integrate with prior literature
-- Acknowledge limitations
-- Project implications and future directions
-- Craft callback to introduction
-- End with resonant closing
+This is where you do the intellectual work of connecting findings to literature:
+
+- **Claim the contribution**: State explicitly what the article adds
+- **Integrate with literature**: Connect to prior work (confirm, challenge, extend)
+- **Acknowledge limitations**: Bound your claims honestly
+- **Project implications**: Theoretical and/or policy significance
+- **Point to future directions**: What comes next?
+
+**Discussion is about MEANING**: What do these findings tell us? How do they change what we know?
 
 **Guides**:
-- `phases/phase2-conclusion.md` (main workflow)
-- `techniques/conclusion-moves.md` (structural elements)
-- `techniques/callbacks.md` (closing the circuit)
+- `phases/phase2-discussion.md` (main workflow)
+- `clusters/` (cluster-specific contribution framing)
 
-> **Pause**: Review conclusion for coherence with introduction.
+> **Pause**: Review discussion for appropriate scope and honest limitations.
 
 ---
 
-### Phase 3: Coherence Check
-**Goal**: Ensure introduction and conclusion work together.
+### Phase 3: Conclusion Drafting
+**Goal**: Close the article with memorable resonance.
 
-- Verify vocabulary echoes (key terms appear in both)
-- Check promise-delivery alignment
+The conclusion is shorter and more focused than discussion:
+
+- **Restate the puzzle**: Return to the motivating question (briefly)
+- **Summarize key findings**: Efficient recap (1-2 paragraphs max)
+- **Callback to introduction**: Echo vocabulary, return to opening image
+- **Resonant coda**: End with something memorable
+
+**Conclusion is about CLOSURE**: Remind readers what you did and leave them with something to remember.
+
+**Guides**:
+- `phases/phase3-conclusion.md` (main workflow)
+- `techniques/callbacks.md` (closing the circuit)
+
+> **Pause**: Review conclusion for callbacks and resonant ending.
+
+---
+
+### Phase 4: Coherence Check
+**Goal**: Ensure all sections work together.
+
+- Verify vocabulary echoes (key terms appear across sections)
+- Check promise-delivery alignment (intro promises match discussion delivery)
 - Assess coherence type (Parallel, Escalators, Bookends)
 - Confirm callback is present and effective
 - Calibrate ambition across sections
 
-**Guide**: `phases/phase3-coherence.md`
+**Guide**: `phases/phase4-coherence.md`
 
 > **Optional**: After coherence check, consider running `/writing-editor` for prose polish—fixes passive voice, abstract nouns, and academic bad habits.
 
@@ -146,10 +177,10 @@ Reference these guides for cluster-specific writing:
 | Guide | Purpose |
 |-------|---------|
 | `techniques/opening-moves.md` | Five opening move types with examples |
-| `techniques/conclusion-moves.md` | Structural elements of conclusions |
+| `techniques/discussion-elements.md` | Contribution, limitations, implications |
 | `techniques/callbacks.md` | Closing the circuit effectively |
 | `techniques/coherence-types.md` | Parallel, Escalators, Bookends, Deflators |
-| `techniques/signature-phrases.md` | Common phrases for intros and conclusions |
+| `techniques/signature-phrases.md` | Common phrases for intros, discussions, and conclusions |
 
 ## Key Statistics (Benchmarks)
 
@@ -163,16 +194,30 @@ Reference these guides for cluster-specific writing:
 | Data mention | Middle of section |
 | Roadmap | Present in 40% |
 
+### Discussion Benchmarks
+
+| Feature | Typical Value |
+|---------|---------------|
+| Word count | 700-1,100 words |
+| Paragraphs | 4-6 |
+| Contribution claim | Required |
+| Literature integration | 1-2 paragraphs |
+| Limitations | Present in 69% |
+| Implications | 1-2 paragraphs |
+| Future directions | Present in 76% |
+
 ### Conclusion Benchmarks
 
 | Feature | Typical Value |
 |---------|---------------|
-| Word count | 900-1,450 words |
-| Paragraphs | 6-10 |
+| Word count | 300-500 words |
+| Paragraphs | 2-4 |
 | Opening move | Restatement (71%) |
-| Limitations | Present in 69% |
-| Future directions | Present in 76% |
+| Findings summary | Brief (1-2 paragraphs) |
 | Callback | **Required (100%)** |
+| Coda | Resonant closing sentence |
+
+**Note**: When Discussion and Conclusion are combined (common), total word count is 900-1,450 words across 6-10 paragraphs.
 
 ### Coherence Benchmarks
 
@@ -222,5 +267,6 @@ prompt: Read phases/phase1-introduction.md and the relevant cluster guide, then 
 **Model recommendations**:
 - Phase 0 (intake): Sonnet
 - Phase 1 (introduction): Opus (requires narrative craft)
-- Phase 2 (conclusion): Opus (requires integration)
-- Phase 3 (coherence): Opus (requires evaluative judgment)
+- Phase 2 (discussion): Opus (requires integration with literature)
+- Phase 3 (conclusion): Opus (requires resonant prose)
+- Phase 4 (coherence): Opus (requires evaluative judgment)

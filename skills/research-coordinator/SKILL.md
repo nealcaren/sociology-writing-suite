@@ -198,11 +198,12 @@ When a user comes to you with a research question like "How do journalists cover
 │     • Writing often reveals need for more analysis or literature        │
 │     • This is normal—embrace it, don't fight it                         │
 │                                                                          │
-│ 14. BOOKENDS (IB.0-IB.3)                                                 │
+│ 14. BOOKENDS (IB.0-IB.4)                                                 │
 │     • Introduction: open the circuit                                     │
+│     • Discussion: interpret what findings mean                           │
 │     • Conclusion: close it with significance                             │
 │     • Coherence check: promises match delivery                           │
-│     └── DECISION POINT: Review intro-conclusion alignment               │
+│     └── DECISION POINT: Review intro-discussion-conclusion alignment    │
 └─────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -297,8 +298,9 @@ This is why the workflow isn't strictly linear. You don't fully finish literatur
 | | | IW.3 | Revision |
 | **interview-bookends** | IB | IB.0 | Intake & Assessment |
 | | | IB.1 | Introduction Drafting |
-| | | IB.2 | Conclusion Drafting |
-| | | IB.3 | Coherence Check |
+| | | IB.2 | Discussion Drafting |
+| | | IB.3 | Conclusion Drafting |
+| | | IB.4 | Coherence Check |
 
 ### Domain 4: Integration & Revision
 
@@ -616,6 +618,7 @@ project/
 │   ├── bookends/                 # IB outputs
 │   │   ├── intake-memo.md
 │   │   ├── introduction.md
+│   │   ├── discussion.md
 │   │   ├── conclusion.md
 │   │   └── coherence-memo.md
 │   └── manuscript.md             # Assembled full manuscript
@@ -839,3 +842,212 @@ Reference these guides for detailed protocols:
 | `phases/iteration-protocols.md` | Handling returns to earlier phases |
 | `templates/project-state-template.md` | Full state file schema |
 | `templates/skill-dispatch-template.md` | How to invoke sub-skills |
+
+## Workflow Decision Tree
+
+Use this decision tree to determine where to start and what to do next:
+
+```
+                            ┌─────────────────────┐
+                            │    USER ARRIVES     │
+                            │  with research Q    │
+                            └──────────┬──────────┘
+                                       │
+                    ┌──────────────────┼──────────────────┐
+                    │                  │                  │
+              ┌─────▼─────┐      ┌─────▼─────┐      ┌─────▼─────┐
+              │  Has data │      │ Has draft │      │ Has both  │
+              │  (trans-  │      │ manuscript│      │ data +    │
+              │  cripts)? │      │    ?      │      │   lit?    │
+              └─────┬─────┘      └─────┬─────┘      └─────┬─────┘
+                    │                  │                  │
+         ┌────No────┴───Yes───┐        │         ┌───────┴───────┐
+         │                    │        │         │               │
+         ▼                    ▼        │         ▼               │
+    ┌─────────┐          ┌─────────┐   │    ┌─────────┐          │
+    │  STAGE  │          │  STAGE  │   │    │  STAGE  │          │
+    │    1    │          │    2    │   │    │    3    │          │
+    │  Lit +  │          │ Analysis│   │    │  Deep   │          │
+    │ Collect │          │  First  │   │    │   Lit   │          │
+    └────┬────┘          └────┬────┘   │    └────┬────┘          │
+         │                    │        │         │               │
+         │                    │        │         ▼               │
+         │                    │        │    ┌─────────┐          │
+         │                    │        │    │  STAGE  │◄─────────┘
+         │                    │        │    │    4    │
+         │                    │        │    │ Writing │
+         │                    │        │    └────┬────┘
+         │                    │        │         │
+         │                    │        ▼         │
+         │                    │   ┌─────────┐    │
+         │                    │   │  STAGE  │◄───┘
+         │                    │   │    5    │
+         │                    │   │Revision │
+         │                    │   └─────────┘
+         │                    │        ▲
+         └──────►(collect)────┴────────┘
+```
+
+### Decision Questions
+
+**Q1: Do you have interview transcripts?**
+- **NO** → Start with Stage 1 (preliminary literature to orient, then data collection)
+- **YES** → Go to Q2
+
+**Q2: Do you have literature review materials?**
+- **NO** → Start with Stage 1 (LS.0-LS.2), then Stage 2 (analysis)
+- **YES** → Go to Q3
+
+**Q3: Have you analyzed the interviews?**
+- **NO** → Start with Stage 2 (IA.1-IA.5)
+- **YES** → Go to Q4
+
+**Q4: Have you written a draft?**
+- **NO** → Start with Stage 3 (deep lit) or Stage 4 (writing)
+- **YES** → Start with Stage 5 (revision/verification)
+
+**Q5: Do you have feedback to address?**
+- **NO** → Run verification (VF.0-VF.4), then writing-editor
+- **YES** → Start with revision-coordinator (RC.0)
+
+## Master Skill Dependency Diagram
+
+This diagram shows how skills connect and depend on each other:
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                           LITERATURE DOMAIN                                  │
+│                                                                              │
+│   ┌─────────────┐         ┌─────────────┐         ┌─────────────┐           │
+│   │ lit-search  │────────►│lit-synthesis│────────►│ argument-   │           │
+│   │             │         │             │         │  builder    │           │
+│   │ LS.0-LS.6   │         │ LY.0-LY.5   │         │ LW.0-LW.5   │           │
+│   └──────┬──────┘         └──────┬──────┘         └──────┬──────┘           │
+│          │                       │                       │                   │
+│          │     ┌─────────────────┼───────────────────────┘                   │
+│          │     │                 │                                           │
+│          │     │    ┌────────────┘                                           │
+│          │     │    │                                                        │
+└──────────┼─────┼────┼────────────────────────────────────────────────────────┘
+           │     │    │
+           ▼     ▼    ▼
+┌──────────────────────────────────────────────────────────────────────────────┐
+│                           ANALYSIS DOMAIN                                     │
+│                                                                               │
+│   ┌─────────────────────────────────────────────────────────────┐            │
+│   │                    interview-analyst                         │            │
+│   │                                                              │            │
+│   │  ┌────────┐   ┌────────┐   ┌────────┐   ┌────────┐         │            │
+│   │  │ IA.0   │──►│ IA.1   │──►│ IA.2   │──►│ IA.3   │──┐      │            │
+│   │  │(theory)│   │(immers)│   │(coding)│   │(interp)│  │      │            │
+│   │  └────────┘   └────────┘   └────────┘   └────────┘  │      │            │
+│   │       ▲                         ▲                    │      │            │
+│   │       │                         │                    ▼      │            │
+│   │       │                         │            ┌────────┐     │            │
+│   │       │                         │            │ IA.4   │     │            │
+│   │       │                         │            │(quality)     │            │
+│   │       │                         │            └───┬────┘     │            │
+│   │       │                         │   ┌───────────┘           │            │
+│   │       │                         │   │                       │            │
+│   │       │                    ┌────┴───┴──┐                    │            │
+│   │       │                    │  If gaps  │                    │            │
+│   │       │                    │  found    │                    │            │
+│   │       │                    └───────────┘                    │            │
+│   │       │                         │                           │            │
+│   │       │                         ▼                           │            │
+│   │       │                  ┌────────────┐                     │            │
+│   │       │                  │   IA.5     │─────────────────────┼───────┐    │
+│   │       │                  │ (synthesis)│                     │       │    │
+│   │       │                  └────────────┘                     │       │    │
+│   │       │                         │                           │       │    │
+│   └───────┼─────────────────────────┼───────────────────────────┘       │    │
+│           │                         │                                   │    │
+│  From LY.2│                         │ Quote database                    │    │
+│           │                         │ Participant profiles              │    │
+│           │                         │                                   │    │
+└───────────┼─────────────────────────┼───────────────────────────────────┼────┘
+            │                         │                                   │
+            │                         ▼                                   │
+┌───────────┼─────────────────────────────────────────────────────────────┼────┐
+│           │               WRITING DOMAIN                                │    │
+│           │                                                             │    │
+│           │  ┌─────────────────────────────────────────────────────┐   │    │
+│           └─►│              methods-writer  (MW.0-MW.2)            │◄──┘    │
+│              │  [Pathway: Efficient / Standard / Detailed]         │        │
+│              └────────────────────────┬────────────────────────────┘        │
+│                                       │                                      │
+│              ┌────────────────────────┼────────────────────────────┐        │
+│              │                        │                            │        │
+│              ▼                        ▼                            ▼        │
+│   ┌───────────────────┐    ┌───────────────────┐    ┌───────────────────┐  │
+│   │ case-justification│    │ interview-writeup │    │ interview-bookends│  │
+│   │    CJ.0-CJ.2      │    │    IW.0-IW.3      │    │    IB.0-IB.4      │  │
+│   │                   │    │                   │    │                   │  │
+│   │  Clusters:        │    │  Findings by      │    │  Phases:          │  │
+│   │  - Methodological │    │  argument, not    │    │  0: Intake        │  │
+│   │  - Typicality     │    │  theme catalog    │    │  1: Introduction  │  │
+│   │  - Strategic      │    │                   │    │  2: Discussion    │  │
+│   │  - Uniqueness     │    │                   │    │  3: Conclusion    │  │
+│   │  - Policy-Oriented│    │                   │    │  4: Coherence     │  │
+│   └─────────┬─────────┘    └─────────┬─────────┘    └─────────┬─────────┘  │
+│             │                        │                        │             │
+│             └────────────────────────┼────────────────────────┘             │
+│                                      │                                      │
+│                                      ▼                                      │
+│                          ┌───────────────────┐                              │
+│                          │    MANUSCRIPT     │                              │
+│                          │   (assembled)     │                              │
+│                          └─────────┬─────────┘                              │
+│                                    │                                        │
+└────────────────────────────────────┼────────────────────────────────────────┘
+                                     │
+                                     ▼
+┌────────────────────────────────────────────────────────────────────────────┐
+│                        INTEGRATION & REVISION DOMAIN                        │
+│                                                                             │
+│   ┌─────────────────┐      ┌─────────────────┐      ┌─────────────────┐    │
+│   │    verifier     │      │    revision-    │      │  writing-editor │    │
+│   │   VF.0-VF.4     │      │   coordinator   │      │   WE.1-WE.4     │    │
+│   │                 │      │   RC.0-RC.4     │      │                 │    │
+│   │ • Quote verify  │      │                 │      │ • Document level│    │
+│   │ • Claim verify  │      │ Routes to:      │      │ • Paragraph     │    │
+│   │ • Source map    │      │ • interview-    │      │ • Sentence      │    │
+│   │                 │      │   writeup       │      │ • Word          │    │
+│   │                 │      │ • argument-     │      │                 │    │
+│   │                 │      │   builder       │      │ Fixes:          │    │
+│   │                 │      │ • interview-    │      │ • Passive voice │    │
+│   │                 │      │   analyst       │      │ • Nominalization│    │
+│   │                 │      │ • methods-writer│      │ • Hedging       │    │
+│   │                 │      │ • etc.          │      │ • LLM patterns  │    │
+│   └────────┬────────┘      └────────┬────────┘      └────────┬────────┘    │
+│            │                        │                        │              │
+│            │                        │                        │              │
+│            └────────────────────────┼────────────────────────┘              │
+│                                     │                                       │
+│                                     ▼                                       │
+│                          ┌───────────────────┐                              │
+│                          │  FINAL MANUSCRIPT │                              │
+│                          │   (publication    │                              │
+│                          │     ready)        │                              │
+│                          └───────────────────┘                              │
+│                                                                             │
+└─────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Skill Output → Input Mappings
+
+| Producing Skill | Output | Consuming Skill | Input |
+|-----------------|--------|-----------------|-------|
+| **lit-search** | Literature corpus | **lit-synthesis** | Papers for deep reading |
+| **lit-synthesis** | Theoretical map | **argument-builder** | Framework for theory section |
+| **lit-synthesis** | Debate map | **argument-builder** | Contribution positioning |
+| **lit-synthesis** | Theoretical map | **interview-analyst** | Sensitizing concepts (Track A) |
+| **interview-analyst** | Quote database | **interview-writeup** | Evidence for findings |
+| **interview-analyst** | Participant profiles | **interview-writeup** | Context for cases |
+| **interview-analyst** | Study details | **methods-writer** | Section content |
+| **argument-builder** | Theory section | **interview-bookends** | Framework for intro/conclusion |
+| **interview-writeup** | Findings section | **interview-bookends** | Claims to frame |
+| **All writing skills** | Manuscript | **verifier** | Content to verify |
+| **verifier** | Issue report | **revision-coordinator** | Items to address |
+| **revision-coordinator** | Feedback map | **[various skills]** | Specific revision tasks |
+| **All sections** | Draft manuscript | **writing-editor** | Prose to polish |
