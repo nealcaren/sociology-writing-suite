@@ -1,7 +1,7 @@
 {
   "name": "sociology-writing-suite",
-  "version": "2.0.0",
-  "description": "Complete academic writing toolkit for sociology research with 18 integrated skills. Use research-coordinator to orchestrate the full workflow, or invoke individual skills: Zotero integration (zotero for 43 MCP tools, zotero-rag for semantic search), literature review (lit-search, lit-synthesis, reading-agent, argument-builder), qualitative analysis (interview-analyst, interview-writeup), manuscript drafting (methods-writer, case-justification, interview-bookends), revision support (verifier, peer-reviewer, revision-coordinator, writing-editor), and skill creation (genre-skill-builder).",
+  "version": "2.1.0",
+  "description": "Complete academic writing toolkit for sociology research with 19 integrated skills. Use research-coordinator to orchestrate the full workflow (now with project-scaffold for standardized project structure and progress tracking). Skills: Zotero integration (zotero, zotero-rag), literature review (lit-search, lit-synthesis, reading-agent, argument-builder), qualitative analysis (interview-analyst, interview-writeup), manuscript drafting (methods-writer, case-justification, interview-bookends, abstract-builder), revision support (verifier, peer-reviewer, revision-coordinator, writing-editor, bibliography-builder), and meta-skills (genre-skill-builder, project-scaffold).",
   "author": {
     "name": "Neal Caren"
   },
@@ -12,7 +12,8 @@
     "qualitative-research",
     "literature-review",
     "manuscript",
-    "peer-review"
+    "peer-review",
+    "project-management"
   ],
   "skills": "./skills/"
 }

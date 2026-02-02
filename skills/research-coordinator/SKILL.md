@@ -7,7 +7,21 @@ description: Orchestrate the complete qualitative research workflow from literat
 
 ## WHEN INVOKED: Start Here
 
-**Do NOT immediately search for files or make assumptions.** Instead, ask the user these scoping questions:
+### Step 1: Check for Existing Project
+
+First, check if `project.yaml` exists in the current directory:
+
+**If project.yaml exists:**
+1. Read `project.yaml` and `progress.yaml`
+2. Generate progress dashboard (use `/project-scaffold status` logic)
+3. Resume from where they left off:
+   > "Welcome back to **[project title]**. Here's where we are:
+   > [dashboard summary]
+   >
+   > Last session you were working on [phase]. Ready to continue?"
+
+**If project.yaml does NOT exist:**
+Ask scoping questions, then scaffold:
 
 > I'll help orchestrate your qualitative research project. First, let me understand where you are:
 >
@@ -15,10 +29,11 @@ description: Orchestrate the complete qualitative research workflow from literat
 > 2. **Do you already have interview transcripts**, or are we starting from scratch?
 > 3. **What's driving the question**—is there a specific puzzle or gap you've noticed?
 > 4. **What's your target output** (journal article, dissertation chapter, book)?
->
-> Once I know that, I'll set up project tracking and we'll dive in—starting with literature if you're early stage, or picking up wherever you left off.
 
-**After the user responds**, proceed to initialize the project and drive the process forward.
+**After the user responds:**
+1. Run `/project-scaffold` to create project structure
+2. Initialize `project.yaml` with their responses
+3. Proceed to first phase based on what they have
 
 ---
 
@@ -323,9 +338,21 @@ This is why the workflow isn't strictly linear. You don't fully finish literatur
 
 ## State Management
 
-### The Project State File
+### Project Files
 
-Every project maintains a `project-state.md` file that tracks:
+Every project maintains two YAML files created by `/project-scaffold`:
+
+| File | Purpose |
+|------|---------|
+| `project.yaml` | Configuration: title, RQ, paths, Zotero settings |
+| `progress.yaml` | State: artifacts, status flags, blocked items, session log |
+
+Skills read `project.yaml` for canonical paths (no more "where are your transcripts?").
+Skills update `progress.yaml` when they complete phases.
+
+### The Project State Schema
+
+The `progress.yaml` file tracks:
 
 ```yaml
 # Project State
@@ -490,7 +517,10 @@ Jump back to any phase. The coordinator will:
 
 | Command | Action |
 |---------|--------|
-| `/init` | Initialize a new project with project-state.md |
+| `/project-scaffold` | Initialize new project structure |
+| `/project-scaffold adopt` | Map existing project to schema |
+| `/project-scaffold status` | Generate progress dashboard |
+| `/project-scaffold update` | Rescan filesystem, update progress.yaml |
 | `/update-argument` | Update the main argument (propagates warnings) |
 | `/update-rq` | Update research questions (propagates warnings) |
 | `/mark-stale [OUTPUT]` | Manually mark an output as needing review |

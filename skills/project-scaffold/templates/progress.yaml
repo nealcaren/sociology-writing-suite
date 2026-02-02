@@ -1,0 +1,83 @@
+# Progress Tracking
+# Auto-updated by skills - manual edits may be overwritten
+schema_version: 1
+
+# Current phase (derived from status flags)
+phase: setup  # setup, literature, analysis, writing, revision, complete
+
+# Artifact registry
+# Skills register their outputs here with paths and timestamps
+artifacts:
+  # Literature
+  # literature_database: literature/database/database.json
+  # reading_notes: [literature/notes/smith2020.md, ...]
+  # theoretical_map: literature/synthesis/theoretical-map.md
+  # debate_map: literature/synthesis/debate-map.md
+  # field_synthesis: literature/synthesis/field-synthesis.md
+
+  # Analysis
+  # codebook: analysis/codes/codebook.md
+  # quote_database: analysis/outputs/quote-database.md
+  # analytical_memos: [analysis/memos/theme1.md, ...]
+
+  # Writing
+  # theory_draft: drafts/sections/theory-section.md
+  # methods_draft: drafts/sections/methods-section.md
+  # findings_draft: drafts/sections/findings-section.md
+  # introduction: drafts/sections/introduction.md
+  # conclusion: drafts/sections/conclusion.md
+
+# Completion status
+# Values: not_started, in_progress, done, blocked
+status:
+  # Setup
+  scaffold: done
+
+  # Literature phases (LS = lit-search, LY = lit-synthesis)
+  lit_search: not_started      # LS.0-LS.6
+  lit_synthesis: not_started   # LY.0-LY.5
+
+  # Analysis phases (IA = interview-analyst)
+  coding: not_started          # IA.1-IA.2
+  interpretation: not_started  # IA.3-IA.4
+  analysis_synthesis: not_started  # IA.5
+
+  # Writing phases
+  theory_draft: not_started    # argument-builder
+  methods_draft: not_started   # methods-writer
+  findings_draft: not_started  # interview-writeup
+  bookends_draft: not_started  # interview-bookends
+
+  # Quality & revision
+  verification: not_started    # verifier
+  peer_review: not_started     # peer-reviewer
+  revision: not_started        # revision-coordinator
+
+# Blocked tasks
+# Each entry: {task: string, reason: string, resolved: bool}
+blocked: []
+
+# Quality checks
+checks:
+  quotes_verified: false
+  bibliography_complete: false
+  coherence_checked: false
+  methods_complete: false
+
+# Iteration log
+# Records when you go back to earlier phases
+iterations: []
+  # - from: findings_draft
+  #   to: coding
+  #   reason: "Needed additional codes for institutional barriers"
+  #   date: 2026-02-01
+
+# Session log
+# Brief record of each work session
+sessions: []
+  # - date: 2026-02-01
+  #   focus: "Completed initial coding"
+  #   next: "Begin interpretation"
+
+# Timestamps
+last_updated: ""

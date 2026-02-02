@@ -111,6 +111,7 @@ Restart Claude Code and type `/help`. You should see these skills listed:
 - `/writing-editor`
 - `/zotero`
 - `/zotero-rag`
+- `/project-scaffold`
 
 ## Quick Start
 
@@ -195,10 +196,11 @@ Go from raw interviews to written manuscript sections:
 | `/bibliography-builder` | Extract citations, match to Zotero, generate bibliography |
 | `/writing-editor` | Edit prose to sound natural; fixes LLM patterns and academic bad habits |
 
-### Meta-Skill
+### Meta-Skills
 
 | Skill | What It Does |
 |-------|--------------|
+| `/project-scaffold` | Initialize project structure with standardized directories and progress tracking |
 | `/genre-skill-builder` | Create new writing skills from corpus analysis |
 
 ## Common Workflows
@@ -266,6 +268,7 @@ sociology-writing-suite/
     ├── lit-synthesis/
     ├── methods-writer/
     ├── peer-reviewer/
+    ├── project-scaffold/     # NEW: Project initialization
     ├── reading-agent/
     ├── research-coordinator/
     ├── revision-coordinator/
@@ -273,6 +276,29 @@ sociology-writing-suite/
     ├── writing-editor/
     ├── zotero/
     └── zotero-rag/
+```
+
+### Project Structure (created by project-scaffold)
+
+```
+your-project/
+├── project.yaml          # Project configuration
+├── progress.yaml         # Workflow state tracking
+├── data/
+│   ├── raw/              # Original transcripts
+│   └── clean/            # Processed versions
+├── analysis/
+│   ├── codes/            # Codebook
+│   ├── memos/            # Analytical memos
+│   └── outputs/          # Quote database
+├── literature/
+│   ├── database/         # lit-search outputs
+│   ├── notes/            # reading-agent outputs
+│   └── synthesis/        # lit-synthesis outputs
+├── drafts/
+│   ├── sections/         # Working drafts
+│   └── revisions/        # Revision rounds
+└── submissions/          # Final manuscripts
 ```
 
 Each skill folder contains:
