@@ -1,6 +1,6 @@
 ---
 name: project-scaffold
-description: Initialize research project structure with standardized directories and metadata files. Creates project.yaml (configuration) and progress.yaml (state tracking) that other skills use for canonical paths and workflow coordination. Use when starting a new project or adopting an existing one.
+description: Initialize research project structure with standardized directories and metadata files. Creates project.yaml (configuration) and progress.yaml (state tracking) that other skills use for canonical paths and workflow coordination. Supports qualitative, quantitative, and mixed methods projects. Use when starting a new project or adopting an existing one.
 ---
 
 # Project Scaffold
@@ -9,12 +9,22 @@ Initialize and manage research project structure. Creates standardized directori
 
 ## Why This Exists
 
-Without scaffolding, every skill asks "Where are your transcripts?" and "Where should I save this?" Project scaffold solves this by:
+Without scaffolding, every skill asks "Where are your data?" and "Where should I save this?" Project scaffold solves this by:
 
 1. Creating canonical paths that all skills respect
 2. Tracking project state so coordinator knows what's done
-3. Enabling prerequisite checking ("Can't write findings until coding is done")
+3. Enabling prerequisite checking ("Can't write findings until analysis is done")
 4. Providing audit trail for reproducibility
+
+## Project Types
+
+Scaffold supports three project types with different structures:
+
+| Type | Use When | Key Directories |
+|------|----------|-----------------|
+| `qualitative` | Interview research, ethnography, content analysis | transcripts, codebook, memos |
+| `quantitative` | Survey, experiments, secondary data analysis | raw_data, scripts, models, figures |
+| `mixed` | Combining qual + quant methods | Both sets of directories |
 
 ## Two Modes
 
@@ -26,6 +36,7 @@ Creates full directory structure and blank metadata files.
 /project-scaffold
 
 Title: Why Activists Leave Social Movements
+Type: qualitative
 ```
 
 ### Mode 2: Adopt Existing Project
@@ -35,7 +46,7 @@ Maps existing directories to canonical paths without moving files.
 ```
 /project-scaffold adopt
 
-My transcripts are in interviews/
+My data is in analysis/
 My literature is in lit-review/pdfs/
 ```
 
@@ -45,13 +56,13 @@ My literature is in lit-review/pdfs/
 
 Ask for:
 - **Project title** (required)
+- **Project type**: `qualitative`, `quantitative`, or `mixed` (required)
 - **Research question** (recommended)
-- **Project type**: `interviews`, `ethnography`, `mixed` (affects which directories to create)
 - **Mode**: `new` or `adopt`
 
 ### Step 2: Create/Map Structure
 
-**For new projects**, create:
+#### Qualitative Projects
 
 ```
 project-name/
@@ -69,102 +80,81 @@ project-name/
 ├── drafts/
 │   ├── sections/         # Individual section drafts
 │   └── revisions/        # Revision rounds
-├── submissions/          # Final manuscripts, cover letters
+├── submissions/          # Final manuscripts
 ├── project.yaml          # Project configuration
 ├── progress.yaml         # State tracking
 └── README.md             # Project overview
 ```
 
-**For adopt mode**, ask where existing files live and write paths to `project.yaml`.
+#### Quantitative Projects
+
+```
+project-name/
+├── data/
+│   ├── raw/              # Original datasets
+│   ├── processed/        # Cleaned/transformed data
+│   └── codebooks/        # Variable documentation
+├── scripts/
+│   ├── cleaning/         # Data preparation scripts
+│   ├── analysis/         # Statistical analysis scripts
+│   └── visualization/    # Figure generation scripts
+├── models/               # Saved model objects, outputs
+├── figures/              # Generated plots and visualizations
+├── tables/               # Generated tables
+├── literature/
+│   ├── database/
+│   ├── notes/
+│   └── synthesis/
+├── drafts/
+│   ├── sections/
+│   └── revisions/
+├── submissions/
+├── project.yaml
+├── progress.yaml
+└── README.md
+```
+
+#### Mixed Methods Projects
+
+```
+project-name/
+├── data/
+│   ├── qualitative/
+│   │   ├── raw/          # Transcripts, fieldnotes
+│   │   └── clean/
+│   └── quantitative/
+│       ├── raw/          # Datasets
+│       ├── processed/
+│       └── codebooks/
+├── analysis/
+│   ├── qualitative/
+│   │   ├── codes/
+│   │   ├── memos/
+│   │   └── outputs/
+│   └── quantitative/
+│       ├── scripts/
+│       ├── models/
+│       └── outputs/
+├── figures/
+├── tables/
+├── literature/
+│   ├── database/
+│   ├── notes/
+│   └── synthesis/
+├── drafts/
+│   ├── sections/
+│   └── revisions/
+├── submissions/
+├── project.yaml
+├── progress.yaml
+└── README.md
+```
 
 ### Step 3: Write Metadata Files
 
-Create `project.yaml` with user input:
+Create `project.yaml` with user input. Schema varies by project type.
 
-```yaml
-# Project configuration - edit as needed
-title: "Why Activists Leave Social Movements"
-research_question: "How do committed activists disengage from movements?"
-
-# Theoretical framing (updated by lit-synthesis, argument-builder)
-theoretical_frame: ""
-contribution_type: ""  # gap-filler, theory-extender, etc.
-
-# Data summary (updated by interview-analyst)
-data:
-  type: interviews
-  count: 0
-  population: ""
-  collection_period: ""
-
-# Target outlets
-target_journals:
-  - "Social Problems"
-  - "Mobilization"
-
-# Canonical paths - all skills use these
-paths:
-  transcripts: data/raw/
-  clean_data: data/clean/
-  codebook: analysis/codes/
-  memos: analysis/memos/
-  quotes: analysis/outputs/
-  literature_db: literature/database/
-  reading_notes: literature/notes/
-  lit_synthesis: literature/synthesis/
-  drafts: drafts/sections/
-  revisions: drafts/revisions/
-  submissions: submissions/
-
-# Zotero integration (optional)
-zotero:
-  collection_key: ""
-  indexed: false
-
-# Created by project-scaffold
-created: TIMESTAMP
-last_updated: TIMESTAMP
-```
-
-Create `progress.yaml` with initial state:
-
-```yaml
-# Progress tracking - auto-updated by skills
-# Do not edit manually unless correcting errors
-
-phase: setup  # setup, literature, analysis, writing, revision
-
-# Artifact registry - skills register outputs here
-artifacts: {}
-
-# Completion flags - derived from artifacts where possible
-status:
-  scaffold: done
-  lit_search: not_started
-  lit_synthesis: not_started
-  coding: not_started
-  interpretation: not_started
-  theory_draft: not_started
-  methods_draft: not_started
-  findings_draft: not_started
-  bookends_draft: not_started
-  verification: not_started
-  revision: not_started
-
-# Blocked tasks with reasons
-blocked: []
-
-# Quality checks
-checks:
-  quotes_verified: false
-  bibliography_complete: false
-  coherence_checked: false
-
-# Session log
-sessions: []
-
-last_updated: TIMESTAMP
-```
+Create `progress.yaml` with type-appropriate phases.
 
 ### Step 4: Create README
 
@@ -176,6 +166,99 @@ Show user what was created and next steps.
 
 ---
 
+## Progress Tracking by Type
+
+### Qualitative Phases
+
+```yaml
+status:
+  # Literature
+  lit_search: not_started
+  lit_synthesis: not_started
+
+  # Analysis
+  immersion: not_started
+  coding: not_started
+  interpretation: not_started
+  synthesis: not_started
+
+  # Writing
+  theory_draft: not_started
+  methods_draft: not_started
+  findings_draft: not_started
+  bookends_draft: not_started
+
+  # Quality
+  verification: not_started
+  revision: not_started
+```
+
+### Quantitative Phases
+
+```yaml
+status:
+  # Literature
+  lit_search: not_started
+  lit_synthesis: not_started
+
+  # Data
+  data_acquisition: not_started
+  data_cleaning: not_started
+
+  # Analysis
+  eda: not_started              # Exploratory data analysis
+  modeling: not_started
+  robustness: not_started       # Sensitivity analyses
+
+  # Outputs
+  visualization: not_started
+  tables: not_started
+
+  # Writing
+  theory_draft: not_started
+  methods_draft: not_started
+  results_draft: not_started
+  bookends_draft: not_started
+
+  # Quality
+  replication_check: not_started
+  revision: not_started
+```
+
+### Mixed Methods Phases
+
+```yaml
+status:
+  # Literature
+  lit_search: not_started
+  lit_synthesis: not_started
+
+  # Qualitative strand
+  qual_immersion: not_started
+  qual_coding: not_started
+  qual_interpretation: not_started
+
+  # Quantitative strand
+  quant_data_prep: not_started
+  quant_eda: not_started
+  quant_modeling: not_started
+
+  # Integration
+  integration: not_started      # Combining qual + quant
+
+  # Writing
+  theory_draft: not_started
+  methods_draft: not_started
+  findings_draft: not_started
+  bookends_draft: not_started
+
+  # Quality
+  verification: not_started
+  revision: not_started
+```
+
+---
+
 ## Progress Dashboard
 
 When invoked with `status` argument, generate a dashboard:
@@ -184,12 +267,11 @@ When invoked with `status` argument, generate a dashboard:
 /project-scaffold status
 ```
 
-**Dashboard output:**
+**Dashboard output (qualitative example):**
 
 ```markdown
 # Project: Why Activists Leave Social Movements
-
-## Current Phase: Analysis
+**Type:** Qualitative | **Phase:** Analysis
 
 ## Artifacts Found
 - [x] Transcripts: 24 files in data/raw/
@@ -207,18 +289,47 @@ When invoked with `status` argument, generate a dashboard:
 | Interpretation | in_progress |
 | Theory Draft | not_started |
 
-## Blocked
-- **Verification**: Cannot verify quotes until findings draft exists
-
 ## Suggested Next Steps
-1. Complete interpretation (IA.3) - you have codes but no analytical memos
+1. Complete interpretation - you have codes but no analytical memos
 2. Start theory draft with /argument-builder
-3. Run /interview-analyst to continue analysis
 
 ## Quality Checks Pending
 - [ ] Quote verification
 - [ ] Bibliography completeness
-- [ ] Intro/conclusion coherence
+```
+
+**Dashboard output (quantitative example):**
+
+```markdown
+# Project: Income Inequality and Health Outcomes
+**Type:** Quantitative | **Phase:** Analysis
+
+## Artifacts Found
+- [x] Raw data: data/raw/nhis_2020.dta
+- [x] Cleaned data: data/processed/analysis_sample.csv
+- [x] Cleaning script: scripts/cleaning/01_prep_data.R
+- [x] Analysis script: scripts/analysis/02_main_models.R
+- [ ] Figures: 0 files in figures/
+- [ ] Tables: 0 files in tables/
+
+## Status
+| Phase | Status |
+|-------|--------|
+| Data Acquisition | done |
+| Data Cleaning | done |
+| EDA | done |
+| Modeling | in_progress |
+| Robustness | not_started |
+| Visualization | not_started |
+
+## Suggested Next Steps
+1. Complete main models
+2. Run robustness checks
+3. Generate figures and tables
+
+## Quality Checks Pending
+- [ ] Replication check
+- [ ] Code review
 ```
 
 ---
@@ -230,24 +341,27 @@ When invoked with `status` argument, generate a dashboard:
 On session start:
 1. Check for `project.yaml` - if missing, invoke `project-scaffold`
 2. Read `progress.yaml` and generate dashboard
-3. Set session agenda based on status and blocked items
+3. Route to appropriate skills based on project type
 
 ### All other skills
 
 Skills read `project.yaml` for paths:
 
 ```python
-# Instead of asking "Where are your transcripts?"
 import yaml
 with open("project.yaml") as f:
     config = yaml.safe_load(f)
-transcript_path = config["paths"]["transcripts"]
+
+project_type = config["type"]
+if project_type == "qualitative":
+    data_path = config["paths"]["transcripts"]
+elif project_type == "quantitative":
+    data_path = config["paths"]["raw_data"]
 ```
 
 Skills update `progress.yaml` when done:
 
 ```python
-# After completing coding
 progress["status"]["coding"] = "done"
 progress["artifacts"]["codebook"] = "analysis/codes/codebook.md"
 progress["last_updated"] = datetime.now().isoformat()
@@ -266,18 +380,27 @@ progress["last_updated"] = datetime.now().isoformat()
 
 ---
 
-## Filesystem Scanning
+## Filesystem Scanning by Type
 
-When generating dashboard or updating progress, scan for known artifacts:
+### Qualitative Artifacts
 
 | Artifact | Detection |
 |----------|-----------|
 | Transcripts | `*.txt`, `*.md`, `*.docx` in `paths.transcripts` |
 | Codebook | `codebook.md` or `codebook.yaml` in `paths.codebook` |
 | Quote database | `quote-database.md` or `quotes.json` in `paths.quotes` |
-| Reading notes | `*.md` files in `paths.reading_notes` |
-| Literature database | `database.json` in `paths.literature_db` |
-| Section drafts | `theory-*.md`, `methods-*.md`, `findings-*.md` in `paths.drafts` |
+| Memos | `*.md` files in `paths.memos` |
+
+### Quantitative Artifacts
+
+| Artifact | Detection |
+|----------|-----------|
+| Raw data | `*.csv`, `*.dta`, `*.sav`, `*.xlsx` in `paths.raw_data` |
+| Processed data | `*.csv`, `*.parquet`, `*.rds` in `paths.processed` |
+| Scripts | `*.R`, `*.py`, `*.do` in `paths.scripts` |
+| Models | `*.rds`, `*.pkl`, `*.joblib` in `paths.models` |
+| Figures | `*.png`, `*.pdf`, `*.svg` in `paths.figures` |
+| Tables | `*.tex`, `*.html`, `*.csv` in `paths.tables` |
 
 ---
 
@@ -288,6 +411,7 @@ Include schema version for forward compatibility:
 ```yaml
 # project.yaml
 schema_version: 1
+type: qualitative  # or quantitative, mixed
 ```
 
 If skills encounter newer schema, warn but continue.
@@ -303,28 +427,24 @@ When user invokes:
 
 2. **Ask project type**:
    > "What kind of project is this?
-   > 1. Interview-based research
-   > 2. Ethnography/fieldwork
-   > 3. Mixed methods
-   > 4. Literature review only"
+   > 1. **Qualitative** - Interviews, ethnography, content analysis
+   > 2. **Quantitative** - Survey, experiments, secondary data
+   > 3. **Mixed methods** - Combining qual + quant approaches"
 
 3. **Ask for basics**:
    > "Project title?"
    > "Research question (one sentence)?"
    > "Target journals? (optional)"
 
-4. **For adopt mode**, ask path questions:
-   > "Where are your transcripts/fieldnotes?"
-   > "Where is your literature?"
-   > "Where are your drafts?"
+4. **For adopt mode**, ask path questions based on type.
 
 5. **Create structure and files**
 
 6. **Report**:
-   > "Project scaffolded. Created:
-   > - 8 directories
-   > - project.yaml (edit to add theoretical frame, data details)
+   > "Project scaffolded as **[type]**. Created:
+   > - [N] directories
+   > - project.yaml (edit to add details)
    > - progress.yaml (auto-managed by skills)
    > - README.md
    >
-   > Next: Add your transcripts to `data/raw/` and run `/research-coordinator` to begin."
+   > Next steps for [type] project: [type-specific guidance]"

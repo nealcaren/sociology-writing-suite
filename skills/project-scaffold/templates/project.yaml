@@ -4,45 +4,102 @@ schema_version: 1
 
 # Core project info
 title: ""
+type: qualitative  # qualitative, quantitative, or mixed
 research_question: ""
 
 # Theoretical framing (updated by lit-synthesis, argument-builder)
 theoretical_frame: ""
 contribution_type: ""  # gap-filler, theory-extender, concept-builder, synthesis, problem-driven
 
-# Data summary (updated by interview-analyst)
+# Data summary
 data:
-  type: interviews  # interviews, ethnography, mixed, literature-only
-  count: 0
-  population: ""
-  sampling: ""
+  # Common fields
+  description: ""
   collection_period: ""
   irb: ""
+
+  # Qualitative-specific (if type: qualitative or mixed)
+  qualitative:
+    type: interviews  # interviews, ethnography, focus-groups, content-analysis
+    count: 0
+    population: ""
+    sampling: ""
+
+  # Quantitative-specific (if type: quantitative or mixed)
+  quantitative:
+    source: ""        # survey name, administrative data, experiment
+    n: 0
+    unit: ""          # individuals, organizations, countries
+    variables_of_interest: []
 
 # Target outlets
 target_journals: []
 
 # Canonical paths - all skills use these
-# Relative to project root
-paths:
-  # Data
+# Paths vary by project type
+
+# --- QUALITATIVE PATHS ---
+# (used when type: qualitative)
+paths_qualitative:
   transcripts: data/raw/
   clean_data: data/clean/
-
-  # Analysis
   codebook: analysis/codes/
   memos: analysis/memos/
   quotes: analysis/outputs/
-
-  # Literature
   literature_db: literature/database/
   reading_notes: literature/notes/
   lit_synthesis: literature/synthesis/
-
-  # Writing
   drafts: drafts/sections/
   revisions: drafts/revisions/
   submissions: submissions/
+
+# --- QUANTITATIVE PATHS ---
+# (used when type: quantitative)
+paths_quantitative:
+  raw_data: data/raw/
+  processed: data/processed/
+  codebooks: data/codebooks/
+  scripts_cleaning: scripts/cleaning/
+  scripts_analysis: scripts/analysis/
+  scripts_viz: scripts/visualization/
+  models: models/
+  figures: figures/
+  tables: tables/
+  literature_db: literature/database/
+  reading_notes: literature/notes/
+  lit_synthesis: literature/synthesis/
+  drafts: drafts/sections/
+  revisions: drafts/revisions/
+  submissions: submissions/
+
+# --- MIXED METHODS PATHS ---
+# (used when type: mixed)
+paths_mixed:
+  # Qualitative
+  qual_raw: data/qualitative/raw/
+  qual_clean: data/qualitative/clean/
+  qual_codes: analysis/qualitative/codes/
+  qual_memos: analysis/qualitative/memos/
+  qual_outputs: analysis/qualitative/outputs/
+  # Quantitative
+  quant_raw: data/quantitative/raw/
+  quant_processed: data/quantitative/processed/
+  quant_codebooks: data/quantitative/codebooks/
+  quant_scripts: analysis/quantitative/scripts/
+  quant_models: analysis/quantitative/models/
+  quant_outputs: analysis/quantitative/outputs/
+  # Shared
+  figures: figures/
+  tables: tables/
+  literature_db: literature/database/
+  reading_notes: literature/notes/
+  lit_synthesis: literature/synthesis/
+  drafts: drafts/sections/
+  revisions: drafts/revisions/
+  submissions: submissions/
+
+# Active paths (set by scaffold based on type)
+paths: {}
 
 # Zotero integration (optional)
 zotero:
