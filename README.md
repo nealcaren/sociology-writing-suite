@@ -14,20 +14,46 @@ This plugin requires [Claude Code](https://docs.anthropic.com/en/docs/claude-cod
 npm install -g @anthropic-ai/claude-code
 ```
 
-### Optional: Zotero MCP Server
+### Zotero MCP Server (Recommended)
 
-Two skills (`lit-synthesis` and `peer-reviewer`) work best with the Zotero MCP server for full-text PDF access:
+Several skills work with your Zotero library for full-text PDF access, annotations, and semantic search. Install the MCP server:
 
 ```bash
-uv tool install "git+https://github.com/54yyyu/zotero-mcp.git"
-zotero-mcp setup
+uv tool install mcp-zotero
 ```
 
-See `skills/lit-synthesis/mcp/zotero-setup.md` for configuration details. These skills still function without Zotero, but with reduced capabilities.
+Or from source:
+
+```bash
+uv tool install "git+https://github.com/nealcaren/mcp-zotero.git"
+```
+
+Then configure in your Claude settings. See `skills/zotero/guides/setup.md` for details.
+
+**Skills that use Zotero:**
+- `zotero` — 43 MCP tools for library operations
+- `zotero-rag` — Semantic search across PDF content
+- `lit-synthesis` — Deep reading with Zotero annotations
+- `peer-reviewer` — Build reviewer personas from your sources
+- `reading-agent` — Create structured reading notes
+- `bibliography-builder` — Match citations to Zotero items
+
+### Optional: Zotero RAG Server (Semantic Search)
+
+For semantic search across your PDFs (finding passages by meaning, not just keywords), install the RAG server:
+
+```bash
+uv tool install "git+https://github.com/nealcaren/mcp-zotero-rag.git"
+```
+
+This enables the `zotero-rag` skill to:
+- Search passages by conceptual similarity
+- Find related discussions across documents
+- Get expanded context around quotes
 
 ### Optional: Docling (for PDF conversion)
 
-The `lit-synthesis` skill can use docling for batch PDF-to-markdown conversion:
+The `lit-synthesis` and `reading-agent` skills can use docling for batch PDF-to-markdown conversion:
 
 ```bash
 pip install docling
@@ -67,7 +93,7 @@ Add to your Claude Code settings (`~/.claude/settings.json` or project `.claude/
 Restart Claude Code and type `/help`. You should see these skills listed:
 
 - `/abstract-builder`
-- `/research-coordinator`
+- `/argument-builder`
 - `/bibliography-builder`
 - `/case-justification`
 - `/genre-skill-builder`
@@ -76,12 +102,15 @@ Restart Claude Code and type `/help`. You should see these skills listed:
 - `/interview-writeup`
 - `/lit-search`
 - `/lit-synthesis`
-- `/argument-builder`
 - `/methods-writer`
 - `/peer-reviewer`
+- `/reading-agent`
+- `/research-coordinator`
 - `/revision-coordinator`
 - `/verifier`
 - `/writing-editor`
+- `/zotero`
+- `/zotero-rag`
 
 ## Quick Start
 
@@ -120,6 +149,13 @@ My theoretical interest is in disengagement processes.
 
 ## The Skills
 
+### Zotero Integration
+
+| Skill | What It Does |
+|-------|--------------|
+| `/zotero` | 43 MCP tools for Zotero library operations (search, metadata, collections, annotations) |
+| `/zotero-rag` | Semantic search across PDF content using RAG embeddings |
+
 ### Literature Review Chain
 
 Use in sequence to go from search to written Theory section:
@@ -127,6 +163,7 @@ Use in sequence to go from search to written Theory section:
 | Skill | What It Does |
 |-------|--------------|
 | `/lit-search` | Build literature database using OpenAlex API |
+| `/reading-agent` | Create structured reading notes for papers |
 | `/lit-synthesis` | Deep reading, theoretical mapping, debate identification |
 | `/argument-builder` | Draft publication-ready Theory section |
 
@@ -171,11 +208,18 @@ Go from raw interviews to written manuscript sections:
 1. `/interview-analyst` — Analyze interviews
 2. `/methods-writer` — Write methods
 3. `/interview-writeup` — Write findings
-4. `/lit-search` → `/lit-synthesis` → `/argument-builder` — Build literature review
+4. `/lit-search` → `/reading-agent` → `/lit-synthesis` → `/argument-builder` — Build literature review
 5. `/interview-bookends` — Write intro and conclusion
 6. `/verifier` — Verify all quotes match source transcripts
 7. `/peer-reviewer` — Pre-submission review
 8. `/bibliography-builder` — Finalize references
+
+### Using Semantic Search for Literature
+
+1. Index your Zotero collection: `index_library collection_key="YOUR_COLLECTION"`
+2. Search by meaning: `semantic_search query="how organizations maintain legitimacy"`
+3. Expand context: `get_chunk_context chunk_id="..." context_lines=20`
+4. Find related passages: `find_similar_chunks chunk_id="..."`
 
 ### Revising After Peer Review
 
@@ -211,6 +255,7 @@ sociology-writing-suite/
 ├── README.md
 └── skills/
     ├── abstract-builder/
+    ├── argument-builder/
     ├── bibliography-builder/
     ├── case-justification/
     ├── genre-skill-builder/
@@ -219,13 +264,15 @@ sociology-writing-suite/
     ├── interview-writeup/
     ├── lit-search/
     ├── lit-synthesis/
-    ├── argument-builder/
     ├── methods-writer/
     ├── peer-reviewer/
+    ├── reading-agent/
     ├── research-coordinator/
     ├── revision-coordinator/
     ├── verifier/
-    └── writing-editor/
+    ├── writing-editor/
+    ├── zotero/
+    └── zotero-rag/
 ```
 
 Each skill folder contains:
@@ -233,6 +280,8 @@ Each skill folder contains:
 - `phases/` — Phase guides
 - `clusters/` or `pathways/` — Style-specific guidance
 - `techniques/` — Craft reference guides
+- `guides/` — Setup and usage guides (for zotero skills)
+- `references/` — Tool references and error patterns
 
 ## License
 
