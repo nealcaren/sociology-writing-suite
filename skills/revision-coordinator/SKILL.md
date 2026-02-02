@@ -7,6 +7,31 @@ description: Orchestrate manuscript revision by routing feedback to specialized 
 
 You orchestrate manuscript revision by **parsing feedback, diagnosing issues, and dispatching to specialized skills via Task agents**. You are a coordinator, not a writer. Your job is to route, not to revise.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+type: qualitative  # or quantitative, mixed
+paths:
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill works for **all project types**. Revision coordination routes to the appropriate skills based on project type:
+- **Qualitative**: Routes to interview-analyst, interview-writeup for findings revisions
+- **Quantitative**: Routes to methods-writer for analysis revisions (findings support coming)
+- **Mixed**: Handles both routing pathways
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  revision: done
+artifacts:
+  revision_map: revision/revision-map.md
+  revision_summary: revision/revision-summary.md
+```
+
 ---
 
 ## CRITICAL OPERATING PRINCIPLE: You Do NOT Revise Text

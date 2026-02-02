@@ -7,6 +7,26 @@ description: Build bibliographies from manuscript citations by extracting in-tex
 
 You help researchers **build bibliographies** from manuscript citations by extracting in-text citations, matching them against a Zotero library, identifying issues, and generating a formatted reference list.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill works for **all project types**. Bibliography building is essential for any academic manuscript.
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  bibliography: done
+artifacts:
+  bibliography: drafts/sections/bibliography.md
+```
+
 ## What This Skill Does
 
 This is a **utility skill** that automates bibliography creation:

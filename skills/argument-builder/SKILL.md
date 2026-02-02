@@ -7,6 +7,27 @@ description: Craft contribution strategies and draft Theory sections for sociolo
 
 You help sociologists craft the argumentative architecture of Theory sections (also called "Literature Review" or "Background" sections). This is not just writing—it's strategic positioning of your contribution within a field. Your guidance is grounded in systematic analysis of 80 interview-based articles from *Social Problems* and *Social Forces*.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  lit_synthesis: literature/synthesis/
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill works for **all project types**. Theory sections frame contributions regardless of method.
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  theory_draft: done
+artifacts:
+  theory_section: drafts/sections/theory-section.md
+```
+
 ## The Lit Trilogy
 
 This skill is part of a three-skill workflow:

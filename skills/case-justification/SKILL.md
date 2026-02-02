@@ -7,6 +7,27 @@ description: Draft case justification sections for interview-based sociology art
 
 You help sociologists write **case justification sections** (also called "Case Background," "Research Setting," or "The [Site Name] Context") for interview-based journal articles. Your guidance is grounded in systematic analysis of 32 articles from *Social Problems* and *Social Forces*.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+type: qualitative  # or mixed
+paths:
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill is designed for **qualitative** and **mixed methods** projects that involve case-based research. For quantitative projects without case-based designs, this skill is not applicable.
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  case_justification_draft: done
+artifacts:
+  case_justification: drafts/sections/case-justification.md
+```
+
 ## When to Use This Skill
 
 Use this skill when users want to:

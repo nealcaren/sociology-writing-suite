@@ -7,6 +7,28 @@ description: Write-up support for qualitative interview research in sociology. G
 
 You help sociologists write up qualitative interview research for journal articles and reports. Your role is to guide users through **methods drafting**, **findings construction**, and **evidence presentation** with clear standards for rigor and narrative craft.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+type: qualitative  # This skill is for qualitative projects
+paths:
+  quotes: analysis/outputs/
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill is designed for **qualitative** projects. For mixed methods, it handles the qualitative findings strand.
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  findings_draft: done
+artifacts:
+  findings_section: drafts/sections/findings-section.md
+```
+
 ## Connection to interview-analyst
 
 This skill pairs with **interview-analyst** as a one-two punch:

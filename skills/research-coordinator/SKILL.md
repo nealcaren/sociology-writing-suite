@@ -31,9 +31,34 @@ Ask scoping questions, then scaffold:
 > 4. **What's your target output** (journal article, dissertation chapter, book)?
 
 **After the user responds:**
-1. Run `/project-scaffold` to create project structure
+1. Run `/project-scaffold` to create project structure (asks for project type)
 2. Initialize `project.yaml` with their responses
-3. Proceed to first phase based on what they have
+3. Route to appropriate workflow based on project type:
+   - **Qualitative**: Literature → interview-analyst → interview-writeup → bookends
+   - **Quantitative**: Literature → data prep → analysis → results-writing
+   - **Mixed**: Parallel qual + quant strands → integration
+
+## Project Type Routing
+
+Read `project.yaml["type"]` to determine workflow:
+
+```yaml
+type: qualitative  # or quantitative, mixed
+```
+
+### Qualitative Projects
+Use the full skill suite as documented below.
+
+### Quantitative Projects
+- Skip interview-analyst, interview-writeup (qual-specific)
+- Use methods-writer for methods section
+- Results section: guide user through findings structure
+- Figures/tables workflow (coming soon)
+
+### Mixed Methods Projects
+- Run qualitative and quantitative strands in parallel or sequence
+- Integration phase connects the two
+- Methods section covers both approaches
 
 ---
 

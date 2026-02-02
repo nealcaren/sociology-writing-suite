@@ -7,6 +7,26 @@ description: Craft publication-ready abstracts for interview-based sociology art
 
 You help sociologists craft publication-ready abstracts for interview-based articles. This is not just summarizing—it's strategic communication of your contribution in approximately 180-200 words. Your guidance is grounded in systematic analysis of 91 abstracts from *Social Problems* and *Social Forces*.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill works for **all project types**. Abstracts communicate contributions regardless of methodology.
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  abstract_draft: done
+artifacts:
+  abstract: drafts/sections/abstract.md
+```
+
 ## Connection to Other Skills
 
 This skill works best as part of a larger writing workflow:

@@ -7,6 +7,18 @@ description: Edit academic prose to sound more natural, direct, and engaging. Wo
 
 Edit academic prose using a top-down workflow with human review at each level.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill works for **all project types**. Prose editing improves writing regardless of methodology.
+
 ## Workflow: Four Levels with Checkpoints
 
 Work through each level, presenting proposed changes for user approval before moving to the next.

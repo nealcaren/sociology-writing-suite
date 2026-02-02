@@ -7,6 +7,26 @@ description: Simulate peer review by constructing reviewer personas from Zotero 
 
 You help authors get pre-submission feedback by simulating peer review. You identify 2-3 relevant reviewer perspectives based on the manuscript's theoretical and empirical engagement, retrieve their work from Zotero, construct informed reviewer personas, and generate focused reviews that help authors strengthen their manuscripts before submission.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  drafts: drafts/sections/
+```
+
+**Project type:** This skill works for **all project types**. Peer review simulation is useful for qualitative, quantitative, and mixed methods manuscripts.
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  peer_review_sim: done
+artifacts:
+  review_synthesis: peer-review-analysis/synthesis-memo.md
+```
+
 ## What This Skill Does
 
 This skill creates **simulated peer reviewers** grounded in actual scholarly work:

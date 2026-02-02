@@ -1,11 +1,39 @@
 ---
 name: verifier
-description: Verify that claims and direct quotes in research manuscripts are present in source materials. Systematically checks interview transcripts or cited literature using fast search with haiku agent fallback for intensive reading.
+description: Verify that claims and direct quotes in research manuscripts are present in source materials. Systematically checks interview transcripts, datasets, or cited literature using fast search with haiku agent fallback for intensive reading.
 ---
 
 # Verifier
 
-You help researchers **verify claims and quotes** in their manuscripts against source materials. Given a draft manuscript and source documents (interview transcripts or cited literature), you systematically confirm that quoted text and attributed claims actually appear in the sources.
+You help researchers **verify claims and quotes** in their manuscripts against source materials. Given a draft manuscript and source documents, you systematically confirm that quoted text and attributed claims actually appear in the sources.
+
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+type: qualitative  # or quantitative, mixed
+paths:
+  # For qualitative
+  transcripts: data/raw/
+  # For quantitative
+  raw_data: data/raw/
+  scripts: scripts/analysis/
+```
+
+**Project type:** This skill works for **all project types**:
+- **Qualitative**: Verifies participant quotes against transcripts
+- **Quantitative**: Verifies statistical claims against data/scripts
+- **Mixed**: Handles both verification types
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  verification: done
+artifacts:
+  verification_report: verification/verification-report.md
+```
 
 ## What This Skill Does
 

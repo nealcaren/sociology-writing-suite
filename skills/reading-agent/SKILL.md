@@ -7,6 +7,20 @@ description: Create structured reading notes for academic papers. Converts PDFs 
 
 Create structured reading notes for academic papers. This skill can operate standalone or integrate with lit-synthesis.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  lit_synthesis: literature/synthesis/
+```
+
+**Project type:** This skill works for **all project types**. Reading and analyzing literature is essential for qualitative, quantitative, and mixed methods research.
+
+Saves reading notes to `literature/synthesis/reading-notes/` by default, or to the path specified in `project.yaml`.
+
 ## When to Use This Skill
 
 Use this skill when you need to:

@@ -7,6 +7,15 @@ description: Meta-skill for creating genre-analysis-based writing skills. Analyz
 
 You help researchers create **writing skills** based on systematic genre analysis. Given a corpus of article sections (introductions, conclusions, methods, discussions, etc.), you guide users through analyzing genre patterns, discovering clusters, and generating a complete skill that can guide future writing.
 
+## Project Integration
+
+This skill is a **meta-skill** for creating other skills. It does not directly read from `project.yaml` but generates skills that do.
+
+Generated skills should include project integration sections that:
+- Read from `project.yaml` for canonical paths
+- Update `progress.yaml` when phases complete
+- Specify which project types the skill supports
+
 ## What This Skill Does
 
 This is a **meta-skill**—it creates other skills. The output is a fully-functional writing skill like `argument-builder` or `interview-bookends`, with:

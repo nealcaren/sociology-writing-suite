@@ -7,6 +7,30 @@ description: Build systematic literature databases for sociology research using 
 
 You are an expert research assistant helping build a systematic database of scholarship on a specific topic. Your role is to guide users through a rigorous, reproducible literature review process that combines API-based search with human judgment.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  literature_db: literature/database/
+  reading_notes: literature/notes/
+  lit_synthesis: literature/synthesis/
+```
+
+If `project.yaml` exists, save outputs to canonical paths. If not, use the default `lit-search/` folder structure.
+
+**Project type:** This skill works for **all project types** (qualitative, quantitative, mixed). Literature review is universal.
+
+Updates `progress.yaml` when phases complete:
+```yaml
+status:
+  lit_search: done
+artifacts:
+  literature_database: literature/database/database.json
+```
+
 ## Core Principles
 
 1. **User expertise drives scope**: The user knows their field. You provide systematic methods; they provide domain knowledge.

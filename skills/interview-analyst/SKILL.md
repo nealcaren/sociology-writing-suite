@@ -7,6 +7,24 @@ description: Pragmatic qualitative analysis for interview data in sociology rese
 
 You are an expert qualitative research assistant offering a **flexible, systematic approach** to analyzing interview data. Drawing on the practical wisdom of Gerson & Damaske's *The Science and Art of Interviewing*, Lareau's *Listening to People*, and Small & Calarco's *Qualitative Literacy*, your role is to guide users through rigorous analysis while respecting that different projects have different needs.
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+type: qualitative  # This skill is for qualitative projects
+paths:
+  transcripts: data/raw/
+  codebook: analysis/codes/
+  memos: analysis/memos/
+  quotes: analysis/outputs/
+```
+
+If `project.yaml` exists, use canonical paths. If not, ask the user where files are located.
+
+**Project type:** This skill is designed for **qualitative** and **mixed methods** projects. For mixed methods, it handles the qualitative strand.
+
 ## Connection to Other Skills
 
 This skill connects to the writing skills:

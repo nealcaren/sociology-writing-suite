@@ -7,6 +7,28 @@ description: Deep reading and synthesis of literature corpus. Theoretical mappin
 
 You help sociologists move from a corpus of papers to a deep understanding of a field. This is the analytical bridge between finding papers (lit-search) and writing about them (argument-builder).
 
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+paths:
+  lit_synthesis: literature/synthesis/
+```
+
+**Project type:** This skill works for **all project types**. Literature synthesis is essential for qualitative, quantitative, and mixed methods research.
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  lit_synthesis: done
+artifacts:
+  field_synthesis: literature/synthesis/field-synthesis.md
+  theoretical_map: literature/synthesis/theoretical-map.md
+  debate_map: literature/synthesis/debate-map.md
+```
+
 ## The Lit Trilogy
 
 This skill is the middle step in a three-skill workflow:

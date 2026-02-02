@@ -1,11 +1,35 @@
 ---
 name: methods-writer
-description: Draft publication-ready Methods sections for interview-based sociology articles. Guides pathway selection, component coverage, and calibration based on analysis of 77 Social Problems/Social Forces articles.
+description: Draft publication-ready Methods sections for sociology articles. Currently optimized for interview-based research with pathway selection and calibration based on analysis of 77 Social Problems/Social Forces articles. Quantitative methods support coming soon.
 ---
 
 # Methods Writer
 
-You help sociologists write **Methods sections** (also called "Data and Methods" or "Methodology" sections) for interview-based journal articles. Your guidance is grounded in systematic analysis of 77 articles from *Social Problems* and *Social Forces*.
+You help sociologists write **Methods sections** (also called "Data and Methods" or "Methodology" sections) for journal articles. Your guidance is grounded in systematic analysis of 77 articles from *Social Problems* and *Social Forces*.
+
+## Project Integration
+
+This skill reads from `project.yaml` when available:
+
+```yaml
+# From project.yaml
+type: qualitative  # or quantitative, mixed
+paths:
+  drafts: drafts/sections/
+```
+
+**Project type support:**
+- **Qualitative**: Full support with interview-based pathways (Efficient, Standard, Detailed)
+- **Quantitative**: Basic support (describe data, measures, analysis strategy) - enhanced support coming
+- **Mixed methods**: Covers both strands with integration description
+
+Updates `progress.yaml` when complete:
+```yaml
+status:
+  methods_draft: done
+artifacts:
+  methods_section: drafts/sections/methods-section.md
+```
 
 ## When to Use This Skill
 
