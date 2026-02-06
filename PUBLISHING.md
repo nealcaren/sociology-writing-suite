@@ -6,15 +6,17 @@ This guide covers how to publish updates to the Claude Code plugin marketplace.
 
 ```
 sociology-writing-suite/
-├── plugin.json                      # Plugin manifest (name, version, description)
 ├── .claude-plugin/
 │   └── marketplace.json             # Marketplace catalog (lists plugins + versions)
-├── skills/
-│   └── [skill-name]/
-│       ├── SKILL.md                 # Skill definition
-│       ├── phases/                  # Phase files
-│       ├── techniques/              # Technique files
-│       └── clusters/                # Cluster files (if applicable)
+├── plugins/
+│   └── sociology-writing-suite/
+│       ├── plugin.json              # Plugin manifest (name, version, description)
+│       └── skills/
+│           └── [skill-name]/
+│               ├── SKILL.md         # Skill definition
+│               ├── phases/          # Phase files
+│               ├── techniques/      # Technique files
+│               └── clusters/        # Cluster files (if applicable)
 └── README.md
 ```
 
@@ -24,7 +26,7 @@ sociology-writing-suite/
 
 | File | Purpose | Version Location |
 |------|---------|------------------|
-| `plugin.json` | Defines the plugin itself | `"version": "X.Y.Z"` at root |
+| `plugins/sociology-writing-suite/plugin.json` | Defines the plugin itself | `"version": "X.Y.Z"` at root |
 | `.claude-plugin/marketplace.json` | What Claude Code displays | `plugins[0].version` field |
 
 ## Update Process
@@ -37,7 +39,7 @@ Edit skills, add new ones, fix bugs, etc.
 
 Decide on new version (e.g., `1.2.0` → `1.3.0`).
 
-**Edit `plugin.json`:**
+**Edit `plugins/sociology-writing-suite/plugin.json`:**
 ```json
 {
   "name": "sociology-writing-suite",
@@ -123,7 +125,7 @@ Follow semantic versioning:
 
 Before pushing an update:
 
-- [ ] Version updated in `plugin.json`
+- [ ] Version updated in `plugins/sociology-writing-suite/plugin.json`
 - [ ] Version updated in `.claude-plugin/marketplace.json`
 - [ ] Description updated in both files (if skills changed)
 - [ ] All new skill files are in place

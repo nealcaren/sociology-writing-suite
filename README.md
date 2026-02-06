@@ -28,7 +28,7 @@ Or from source:
 uv tool install "git+https://github.com/nealcaren/mcp-zotero.git"
 ```
 
-Then configure in your Claude settings. See `skills/zotero/guides/setup.md` for details.
+Then configure in your Claude settings. See `plugins/sociology-writing-suite/skills/zotero/guides/setup.md` for details.
 
 **Skills that use Zotero:**
 - `zotero` — 43 MCP tools for library operations
@@ -63,8 +63,11 @@ pip install docling
 
 ### Option 1: Marketplace (Recommended)
 
+Add the marketplace, then install the plugin:
+
 ```
-/install nealcaren/sociology-writing-suite
+/plugin marketplace add nealcaren/sociology-writing-suite
+/plugin install sociology-writing-suite@sociology-writing-suite
 ```
 
 ### Option 2: Clone and Configure Manually
@@ -81,7 +84,7 @@ Add to your Claude Code settings (`~/.claude/settings.json` or project `.claude/
     "/path/to/your/project": {
       "mcpServers": {},
       "skills": [
-        "/path/to/sociology-writing-suite"
+        "/path/to/sociology-writing-suite/plugins/sociology-writing-suite"
       ]
     }
   }
@@ -253,29 +256,33 @@ Each skill follows a structured workflow with pause points for user review.
 
 ```
 sociology-writing-suite/
-├── plugin.json
-├── README.md
-└── skills/
-    ├── abstract-builder/
-    ├── argument-builder/
-    ├── bibliography-builder/
-    ├── case-justification/
-    ├── genre-skill-builder/
-    ├── interview-analyst/
-    ├── interview-bookends/
-    ├── interview-writeup/
-    ├── lit-search/
-    ├── lit-synthesis/
-    ├── methods-writer/
-    ├── peer-reviewer/
-    ├── project-scaffold/     # NEW: Project initialization
-    ├── reading-agent/
-    ├── research-coordinator/
-    ├── revision-coordinator/
-    ├── verifier/
-    ├── writing-editor/
-    ├── zotero/
-    └── zotero-rag/
+├── .claude-plugin/
+│   └── marketplace.json        # Marketplace catalog
+├── plugins/
+│   └── sociology-writing-suite/
+│       ├── plugin.json         # Plugin manifest
+│       └── skills/
+│           ├── abstract-builder/
+│           ├── argument-builder/
+│           ├── bibliography-builder/
+│           ├── case-justification/
+│           ├── genre-skill-builder/
+│           ├── interview-analyst/
+│           ├── interview-bookends/
+│           ├── interview-writeup/
+│           ├── lit-search/
+│           ├── lit-synthesis/
+│           ├── methods-writer/
+│           ├── peer-reviewer/
+│           ├── project-scaffold/
+│           ├── reading-agent/
+│           ├── research-coordinator/
+│           ├── revision-coordinator/
+│           ├── verifier/
+│           ├── writing-editor/
+│           ├── zotero/
+│           └── zotero-rag/
+└── README.md
 ```
 
 ### Project Structure (created by project-scaffold)
