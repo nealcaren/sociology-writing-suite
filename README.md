@@ -4,77 +4,28 @@ A set of skills for [Claude Code](https://docs.anthropic.com/en/docs/claude-code
 
 **This project is actively under development.** Skills and workflows may change.
 
-## Requirements
+## Installation
 
-### Claude Code
-
-This plugin requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code), Anthropic's agentic coding tool. Install it first:
+Requires [Claude Code](https://docs.anthropic.com/en/docs/claude-code):
 
 ```bash
 npm install -g @anthropic-ai/claude-code
 ```
 
-### Zotero MCP Server (Recommended)
-
-Several skills work with your Zotero library for full-text PDF access, annotations, and semantic search. The `mcp-zotero` package provides 38 base tools plus optional semantic search:
-
-```bash
-# Base install (38 Zotero API tools)
-uv tool install mcp-zotero
-
-# With semantic search (+ 8 RAG tools)
-uv tool install "mcp-zotero[rag]"
-
-# With OCR fallback for scanned PDFs
-uv tool install "mcp-zotero[rag,ocr]"
-```
-
-Configure in `.mcp.json`:
-
-```json
-{
-  "mcpServers": {
-    "zotero": {
-      "command": "mcp-zotero",
-      "env": {
-        "ZOTERO_LIBRARY_ID": "YOUR_LIBRARY_ID",
-        "ZOTERO_LOCAL": "true",
-        "ZOTERO_LOCAL_KEY": "YOUR_LOCAL_KEY",
-        "ZOTERO_ATTACHMENTS_DIR": "~/Zotero/storage"
-      }
-    }
-  }
-}
-```
-
-See `plugins/sociology-writing-suite/skills/zotero/guides/setup.md` for details.
-
-**Skills that use Zotero:**
-- `zotero` — 38 MCP tools for library operations
-- `zotero-rag` — Semantic search across PDF content (requires `[rag]` install)
-- `lit-synthesis` — Deep reading with Zotero annotations
-- `peer-reviewer` — Build reviewer personas from your sources
-- `reading-agent` — Create structured reading notes
-- `bibliography-builder` — Match citations to Zotero items
-
-## Installation
-
-### Option 1: Marketplace (Recommended)
-
-Add the marketplace, then install the plugin:
+Then install the plugin:
 
 ```
 /plugin marketplace add nealcaren/sociology-writing-suite
 /plugin install sociology-writing-suite@sociology-writing-suite
 ```
 
-### Option 2: Clone and Configure Manually
+Or clone manually:
 
 ```bash
 git clone https://github.com/nealcaren/sociology-writing-suite.git
 ```
 
-Add to your Claude Code settings (`~/.claude/settings.json` or project `.claude/settings.json`):
+And add to your Claude Code settings (`~/.claude/settings.json` or project `.claude/settings.json`):
 
 ```json
 {
@@ -91,28 +42,7 @@ Add to your Claude Code settings (`~/.claude/settings.json` or project `.claude/
 
 ### Verify Installation
 
-Restart Claude Code and type `/help`. You should see these skills listed:
-
-- `/abstract-builder`
-- `/argument-builder`
-- `/bibliography-builder`
-- `/case-justification`
-- `/genre-skill-builder`
-- `/interview-analyst`
-- `/interview-bookends`
-- `/interview-writeup`
-- `/lit-search`
-- `/lit-synthesis`
-- `/methods-writer`
-- `/peer-reviewer`
-- `/reading-agent`
-- `/research-coordinator`
-- `/revision-coordinator`
-- `/verifier`
-- `/writing-editor`
-- `/zotero`
-- `/zotero-rag`
-- `/project-scaffold`
+Restart Claude Code and type `/help`. You should see skills like `/interview-analyst`, `/lit-search`, `/argument-builder`, etc.
 
 ## Quick Start
 
@@ -151,12 +81,15 @@ My theoretical interest is in disengagement processes.
 
 ## The Skills
 
-### Zotero Integration
+### Interview Research Chain
+
+Go from raw interviews to written manuscript sections:
 
 | Skill | What It Does |
 |-------|--------------|
-| `/zotero` | 43 MCP tools for Zotero library operations (search, metadata, collections, annotations) |
-| `/zotero-rag` | Semantic search across PDF content using RAG embeddings |
+| `/interview-analyst` | Qualitative coding and pattern identification |
+| `/interview-writeup` | Draft Methods and Findings sections |
+| `/interview-bookends` | Draft Introduction and Conclusion |
 
 ### Literature Review Chain
 
@@ -168,16 +101,6 @@ Use in sequence to go from search to written Theory section:
 | `/reading-agent` | Create structured reading notes for papers |
 | `/lit-synthesis` | Deep reading, theoretical mapping, debate identification |
 | `/argument-builder` | Draft publication-ready Theory section |
-
-### Interview Research Chain
-
-Go from raw interviews to written manuscript sections:
-
-| Skill | What It Does |
-|-------|--------------|
-| `/interview-analyst` | Qualitative coding and pattern identification |
-| `/interview-writeup` | Draft Methods and Findings sections |
-| `/interview-bookends` | Draft Introduction and Conclusion |
 
 ### Manuscript Section Skills
 
@@ -203,6 +126,15 @@ Go from raw interviews to written manuscript sections:
 |-------|--------------|
 | `/project-scaffold` | Initialize project structure with standardized directories and progress tracking |
 | `/genre-skill-builder` | Create new writing skills from corpus analysis |
+
+### Zotero Integration
+
+| Skill | What It Does |
+|-------|--------------|
+| `/zotero` | 38 MCP tools for Zotero library operations (search, metadata, collections, annotations) |
+| `/zotero-rag` | Semantic search across PDF content using RAG embeddings |
+
+These require the `mcp-zotero` server — see [Zotero Setup](#zotero-setup-optional) below.
 
 ## Common Workflows
 
@@ -250,6 +182,43 @@ All skills include empirically-derived benchmarks: word counts, citation density
 
 Each skill follows a structured workflow with pause points for user review.
 
+## Zotero Setup (Optional)
+
+Several skills can connect to your [Zotero](https://www.zotero.org/) library for full-text PDF access, annotations, and semantic search. The skills will detect if Zotero isn't configured and offer to help you set it up. You can also set it up manually:
+
+```bash
+# Base install (38 Zotero API tools)
+uv tool install mcp-zotero
+
+# With semantic search (+ 8 RAG tools)
+uv tool install "mcp-zotero[rag]"
+
+# With OCR fallback for scanned PDFs
+uv tool install "mcp-zotero[rag,ocr]"
+```
+
+Configure in `.mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "zotero": {
+      "command": "mcp-zotero",
+      "env": {
+        "ZOTERO_LIBRARY_ID": "YOUR_LIBRARY_ID",
+        "ZOTERO_LOCAL": "true",
+        "ZOTERO_LOCAL_KEY": "YOUR_LOCAL_KEY",
+        "ZOTERO_ATTACHMENTS_DIR": "~/Zotero/storage"
+      }
+    }
+  }
+}
+```
+
+See `plugins/sociology-writing-suite/skills/zotero/guides/setup.md` for details.
+
+**Skills that use Zotero:** `zotero`, `zotero-rag`, `lit-synthesis`, `peer-reviewer`, `reading-agent`, `bibliography-builder`
+
 ## File Structure
 
 ```
@@ -281,29 +250,6 @@ sociology-writing-suite/
 │           ├── zotero/
 │           └── zotero-rag/
 └── README.md
-```
-
-### Project Structure (created by project-scaffold)
-
-```
-your-project/
-├── project.yaml          # Project configuration
-├── progress.yaml         # Workflow state tracking
-├── data/
-│   ├── raw/              # Original transcripts
-│   └── clean/            # Processed versions
-├── analysis/
-│   ├── codes/            # Codebook
-│   ├── memos/            # Analytical memos
-│   └── outputs/          # Quote database
-├── literature/
-│   ├── database/         # lit-search outputs
-│   ├── notes/            # reading-agent outputs
-│   └── synthesis/        # lit-synthesis outputs
-├── drafts/
-│   ├── sections/         # Working drafts
-│   └── revisions/        # Revision rounds
-└── submissions/          # Final manuscripts
 ```
 
 Each skill folder contains:
